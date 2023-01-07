@@ -1,8 +1,8 @@
 const axios = require("axios");
-const {
-  isElement,
-  findRenderedDOMComponentWithTag,
-} = require("react-dom/test-utils");
+// const {
+//   isElement,
+//   findRenderedDOMComponentWithTag,
+// } = require("react-dom/test-utils");
 const { DataTypes } = require("sequelize");
 require("dotenv").config();
 const { API_KEY } = process.env;
