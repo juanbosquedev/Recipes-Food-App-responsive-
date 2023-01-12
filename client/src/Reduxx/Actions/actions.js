@@ -11,12 +11,12 @@ export const NAME_ORDER_A = "NAME_ORDER_A";
 export const NAME_ORDER_D = "NAME_ORDER_D";
 export const DELETE_RECIPE = "DELETE_RECIPE";
 export const DELETE_RECIPE_CREATED = "DELETE_RECIPE_CREATED";
-
+let api = "https://api-production-9688.up.railway.app";
 export function get_recipe(name) {
   return async function (dispatch) {
     try {
       const { data } = await axios.get(
-        `http://localhost:3001/recipes?name=${name}`
+        `${api}/recipes?name=${name}`
       );
       return dispatch({ type: GET_RECIPE, payload: data });
     } catch (error) {
@@ -32,7 +32,7 @@ export function get_Detail(id) {
   console.log("get-details id " + id);
   return async function (dispatch) {
     try {
-      const { data } = await axios.get(`http://localhost:3001/recipes/${id}`);
+      const { data } = await axios.get(`${api}/recipes/${id}`);
       console.log("soy details " + data);
       return dispatch({ type: GET_DETAILS, payload: data });
     } catch (error) {
@@ -45,7 +45,7 @@ export function create_Recipe(object) {
   return async function (dispatch) {
     try {
       const { data } = await axios.post(
-        `http://localhost:3001/recipes`,
+        `api-production-9688.up.railway.app/recipes`,
         object
       );
       return dispatch({ type: CREATE_RECIPE, payload: data });
@@ -57,7 +57,7 @@ export function create_Recipe(object) {
 export function get_Diets() {
   return async function (dispatch) {
     try {
-      const { data } = await axios.get("http://localhost:3001/diets");
+      const { data } = await axios.get(`${api}/diets`);
       return dispatch({ type: GET_DIETS, payload: data });
     } catch (error) {
       return dispatch({ type: GET_DIETS, payload: error });
@@ -82,7 +82,7 @@ export const deleteRecipeCreated = (id) => {
 export function showRecipesCreated() {
   return async function (dispatch) {
     try {
-      const { data } = await axios.get("http://localhost:3001/recipesCreated");
+      const { data } = await axios.get(`${api}/recipesCreated`);
       console.log(data, "soy data");
       return dispatch({ type: SHOW_RECIPES_CREATED, payload: data });
     } catch (error) {
