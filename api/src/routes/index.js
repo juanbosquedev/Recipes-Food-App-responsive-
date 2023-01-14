@@ -47,7 +47,6 @@ router.get("/recipesCreated", async (req, res) => {
     },
   });
   try {
-    console.log(created.length, " Soy created");
     if (!created) return res.status(400).send(" receta no  creada");
     return res.status(200).json(created);
   } catch (error) {

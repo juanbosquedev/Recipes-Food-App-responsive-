@@ -45,7 +45,7 @@ export function create_Recipe(object) {
   return async function (dispatch) {
     try {
       const { data } = await axios.post(
-        `api-production-9688.up.railway.app/recipes`,
+        api,
         object
       );
       return dispatch({ type: CREATE_RECIPE, payload: data });
