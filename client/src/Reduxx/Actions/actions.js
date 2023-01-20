@@ -1,4 +1,5 @@
 import axios from "axios";
+require("dotenv").config();
 export const GET_RECIPE = "GET_RECIPE";
 export const GET_DETAILS = "GET_DETAILS";
 export const CREATE_RECIPE = "CREATE_RECIPE";
@@ -11,16 +12,25 @@ export const NAME_ORDER_A = "NAME_ORDER_A";
 export const NAME_ORDER_D = "NAME_ORDER_D";
 export const DELETE_RECIPE = "DELETE_RECIPE";
 export const DELETE_RECIPE_CREATED = "DELETE_RECIPE_CREATED";
-let api = "https://api-production-9688.up.railway.app";
+
+const { REACT_APP_API_URL } = process.env;
+
 export function get_recipe(name) {
   return async function (dispatch) {
     try {
       const { data } = await axios.get(
-        `${api}/recipes?name=${name}`
+        `${REACT_APP_API_URL}/recipes?name=${name}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
       );
+      console.log(data, " soy data linea 21");
       return dispatch({ type: GET_RECIPE, payload: data });
     } catch (error) {
-      console.log(error);
+      console.log("soy error linea 23 ", error);
       return dispatch({
         type: GET_RECIPE,
         payload: error,
@@ -29,10 +39,9 @@ export function get_recipe(name) {
   };
 }
 export function get_Detail(id) {
-  console.log("get-details id " + id);
   return async function (dispatch) {
     try {
-      const { data } = await axios.get(`${api}/recipes/${id}`);
+      const { data } = await axios.get(`${REACT_APP_API_URL}/recipes/${id}`);
       console.log("soy details " + data);
       return dispatch({ type: GET_DETAILS, payload: data });
     } catch (error) {
@@ -44,10 +53,7 @@ export function get_Detail(id) {
 export function create_Recipe(object) {
   return async function (dispatch) {
     try {
-      const { data } = await axios.post(
-        api,
-        object
-      );
+      const { data } = await axios.post(REACT_APP_API_URL, object);
       return dispatch({ type: CREATE_RECIPE, payload: data });
     } catch (error) {
       return dispatch({ type: CREATE_RECIPE, payload: error });
@@ -57,7 +63,7 @@ export function create_Recipe(object) {
 export function get_Diets() {
   return async function (dispatch) {
     try {
-      const { data } = await axios.get(`${api}/diets`);
+      const { data } = await axios.get(`${REACT_APP_API_URL}/diets`);
       return dispatch({ type: GET_DIETS, payload: data });
     } catch (error) {
       return dispatch({ type: GET_DIETS, payload: error });
@@ -82,7 +88,7 @@ export const deleteRecipeCreated = (id) => {
 export function showRecipesCreated() {
   return async function (dispatch) {
     try {
-      const { data } = await axios.get(`${api}/recipesCreated`);
+      const { data } = await axios.get(`${REACT_APP_API_URL}/recipesCreated`);
       console.log(data, "soy data");
       return dispatch({ type: SHOW_RECIPES_CREATED, payload: data });
     } catch (error) {

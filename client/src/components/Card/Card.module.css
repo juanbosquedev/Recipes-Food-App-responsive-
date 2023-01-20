@@ -11,6 +11,18 @@
   border-radius: 8px;
 }
 
+@media only screen and (max-width: 600px) {
+  .card {
+
+  /* display: grid;
+   grid-template-columns: auto;
+   
+    backdrop-filter: blur(400px);
+    height: 400px;
+    width: 200px; */
+    
+  }
+}
 .card:hover {
   transform: translateY(-15px);
 }

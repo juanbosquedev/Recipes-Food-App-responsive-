@@ -1,26 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'normalize.css';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "normalize.css";
+import "./index.css";
+import App from "./App";
 import dotenv from "dotenv";
-import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux';
-import store from '../src/Reduxx/Store/store'
-import { BrowserRouter } from 'react-router-dom';
-import Welcome from './components/Welcome/Welcome';
+import reportWebVitals from "./reportWebVitals";
+import { Provider } from "react-redux";
+import store from "../src/Reduxx/Store/store";
+import { BrowserRouter } from "react-router-dom";
+
 dotenv.config();
 
 ReactDOM.render(
   <BrowserRouter>
-  <Provider store={store}>
-{/*  
-  <React.StrictMode> */}
-    <App />
-  {/* </React.StrictMode>, */}
-  </Provider>,
+    <Provider store={store}>
+      <App />
+    </Provider>
   </BrowserRouter>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

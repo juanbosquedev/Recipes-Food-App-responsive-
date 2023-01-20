@@ -20,6 +20,7 @@ import SearchBar from "../Search/SearchBar";
 
 export default function Home() {
   const recipes = useSelector((state) => state.recipes);
+  const DietsTypes = useSelector((state) => state.diets);
   const dispatch = useDispatch();
   const [paginado, setPaginado] = useState();
 
@@ -37,7 +38,6 @@ export default function Home() {
     dispatch(get_recipe());
   }, []);
 
-  const DietsTypes = useSelector((state) => state.diets);
 
   function HandlerDietsFilter(e) {
     dispatch(dietsFilter(e.target.value));

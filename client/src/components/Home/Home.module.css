@@ -25,18 +25,18 @@ select{
   font-stretch: normal;  
 }
 @media only screen and (max-width: 600px) {
-  .cards {
 
-   
-    backdrop-filter: blur(400px);
-    height: 400px;
-    width: 200px;
-    
-  }
-  .home{
+  .cards{
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    flex-direction: column;
+    
+    grid-template-columns: repeat(1,1fr);
+    justify-items: center;
+    justify-content: center;
+    padding-top: 8px;
+    padding: 8px;
   }
+
  
 }
 
