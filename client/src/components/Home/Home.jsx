@@ -38,7 +38,6 @@ export default function Home() {
     dispatch(get_recipe());
   }, []);
 
-
   function HandlerDietsFilter(e) {
     dispatch(dietsFilter(e.target.value));
   }
@@ -60,7 +59,7 @@ export default function Home() {
   }
 
   return (
-    <div className={Style.Home}>
+    <div className={Style.home}>
       <div className={Style.main}>
         <Paginate
           className={Style.paginate}
@@ -75,7 +74,9 @@ export default function Home() {
             defaultValue="default"
             onChange={(e) => HandlerDietsFilter(e)}
           >
-            <option Style="padding-bottom:4px" value="default">Diets Order</option>
+            <option Style="padding-bottom:4px" value="default">
+              Diets Order
+            </option>
             {DietsTypes &&
               DietsTypes.map((el) => {
                 return (

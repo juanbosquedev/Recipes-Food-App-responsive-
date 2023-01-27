@@ -24,9 +24,6 @@ router.get("/recipes/:id", async (req, res) => {
   const { id } = req.params;
   console.log("soy id ", id);
   try {
-    // const { data } = await axios.get(
-    //   `https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`
-    // );//
     const data = await Recipe.findOne({
       where: {
         id: { [Op.eq]: id },
@@ -121,7 +118,7 @@ router.post("/recipes", async (req, res) => {
     const receta = await Recipe.create(req.body);
     return res.status(200).json(receta);
   } catch (error) {
-    console.log(error, "soy error")
+    console.log(error, "soy error");
     return res.status(402).json(error);
   }
 });

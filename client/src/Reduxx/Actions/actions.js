@@ -13,13 +13,14 @@ export const NAME_ORDER_D = "NAME_ORDER_D";
 export const DELETE_RECIPE = "DELETE_RECIPE";
 export const DELETE_RECIPE_CREATED = "DELETE_RECIPE_CREATED";
 
-const { REACT_APP_API_URL } = process.env;
+// const { REACT_APP_API_URL } = process.env;
+const REACT_APP_API_URL = "http://localhost:3002";
 
 export function get_recipe(name) {
   return async function (dispatch) {
     try {
       const { data } = await axios.get(
-        `${REACT_APP_API_URL}/recipes?name=${name}`,
+        `http://localhost:3002/recipes?name=${name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -63,7 +64,7 @@ export function create_Recipe(object) {
 export function get_Diets() {
   return async function (dispatch) {
     try {
-      const { data } = await axios.get(`${REACT_APP_API_URL}/diets`);
+      const { data } = await axios.get(`http://localhost:3002/diets`);
       return dispatch({ type: GET_DIETS, payload: data });
     } catch (error) {
       return dispatch({ type: GET_DIETS, payload: error });
