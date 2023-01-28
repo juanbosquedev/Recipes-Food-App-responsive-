@@ -13,11 +13,14 @@ import CreateRecipe from "../src/components/CreateRecipe/CreateRecipe.jsx";
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div >
         <Switch>
       
           <Route exact path="/" component={Welcome} />
           <React.Fragment>
+            <section className="App">
+
+         
             <Nav />
             <Route exact path="/home" component={Home} />
             <Route path="/SearchBar" component={SearchBar} />
@@ -25,6 +28,7 @@ function App() {
             <Route path="/CardDetail/:id" component={CardDetail} />
             <Route path="/CreateRecipe" component={CreateRecipe} />
             <Route path="/RecipesCreated" component={RecipesCreated} />
+            </section>
           </React.Fragment>
         </Switch>
       </div>

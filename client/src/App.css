@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  
 }
 .body,
 input {
@@ -8,15 +7,11 @@ input {
 }
 
 body {
-  display: grid;
-  background-image: url('https://media.istockphoto.com/id/924476838/es/foto/deliciosa-pizza-con-los-ingredientes-y-especias.jpg?s=612x612&w=0&k=20&c=S1DsWSKnoRnF8fAinomrzI1CVszVQvyepHeWMNPR73g=');
-    /* background-repeat: no-repeat; */
-    background-attachment: fixed, scroll;
-    background-repeat: no-repeat, repeat-y;
-  background-size:cover;
- height: 100%;
- min-height: 100vh;
+  background-image: url("https://media.istockphoto.com/id/924476838/es/foto/deliciosa-pizza-con-los-ingredientes-y-especias.jpg?s=612x612&w=0&k=20&c=S1DsWSKnoRnF8fAinomrzI1CVszVQvyepHeWMNPR73g=");
 
+  background-attachment: fixed, scroll;
+  background-repeat: no-repeat, repeat-y;
+  background-size: cover;
 }
 :root {
   color: #282c34;
@@ -25,7 +20,6 @@ body {
   height: 40vmin;
   pointer-events: none;
 }
-
 
 .App-header {
   background-color: #282c34;
@@ -50,18 +44,16 @@ body {
     transform: rotate(360deg);
   }
 }
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-  .body{
-    /* position: relative;
-    inline-size: 90%; */
-    display: grid;
-    background-attachment: fixed, scroll;
-    background-repeat: no-repeat, repeat-x;
-    /* overflow-x: hidden; */
-    justify-content: center;
-align-items: center;
+  body {
+    /* background-image: none;
+    background-color: blue; */
+
+  /* background-size: cover;
+  max-width: fit-content; */
+
   }
 }

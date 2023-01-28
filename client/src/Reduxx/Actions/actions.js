@@ -64,7 +64,7 @@ export function create_Recipe(object) {
 export function get_Diets() {
   return async function (dispatch) {
     try {
-      const { data } = await axios.get(`http://localhost:3002/diets`);
+      const { data } = await axios.get(`${REACT_APP_API_URL}/diets`);
       return dispatch({ type: GET_DIETS, payload: data });
     } catch (error) {
       return dispatch({ type: GET_DIETS, payload: error });

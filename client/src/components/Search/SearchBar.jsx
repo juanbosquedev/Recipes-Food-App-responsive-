@@ -22,7 +22,7 @@ export default function SearchBar() {
   useEffect(() => {
     dispatch(get_recipe(" "));
     dispatch(get_Diets());
-  }, [recipes]);
+  }, [recipes]); 
   return (
     <div>
       <form

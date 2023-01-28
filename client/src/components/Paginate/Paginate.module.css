@@ -3,32 +3,22 @@
   display: flex;
   justify-content: center;
   height: 30px;
-  
-
 }
-.body button{
-    border-radius: 10px;
-    background-color: #790c0c;
-    margin-right: 4px;
-    color:white;
-    border: black solid 2px bold;
-    transition: 0.25s ease;
-    cursor: pointer;
-
-    
+.body button {
+  border-radius: 10px;
+  background-color: #790c0c;
+  margin-right: 4px;
+  color: white;
+  border: black solid 2px bold;
+  transition: 0.25s ease;
+  cursor: pointer;
 }
-.body button :hover{
-    background-color: gray;
+.body button :hover {
+  background-color: gray;
 }
 
-/* @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
   .body {
-
-      display: flex;
-      flex-direction: column;
-      width: 100vw;
-      
-  
-    
+    height: 23px;
   }
-} */
+}
