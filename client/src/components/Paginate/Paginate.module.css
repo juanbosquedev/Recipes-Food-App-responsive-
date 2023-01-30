@@ -21,4 +21,8 @@
   .body {
     height: 23px;
   }
+  #btn{
+     
+    visibility: hidden;
+  }
 }

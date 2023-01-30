@@ -25,14 +25,18 @@ export default function Paginate({ paginado, setPaginado }) {
   }, [recipes]);
   return (
     <div className={Style.body}>
+      {/* <span className={Style.btn}> */}
+        <button
+          // hidden={current === 1 && true}
+          id={Style.btn}
+          className={`button ${current === 1}`}
+          onClick={() => changePage(1)}
+        >
+          Begin
+        </button>
+      {/* </span> */}
       <button
-        // hidden={current === 1 && true}
-        className={`button ${current === 1}`}
-        onClick={() => changePage(1)}
-      >
-        Begin
-      </button>
-      <button
+        id="btn"
         hidden={current === 1 && true}
         className={`button ${current === 1}`}
         onClick={() => changePage(current - 1)}
@@ -47,14 +51,17 @@ export default function Paginate({ paginado, setPaginado }) {
       >
         +
       </button>
-      <button
-        // hidden={current === paginate && true}
+      {/* <span className={Style.btn}> */}
+        <button
+          // hidden={current === paginate && true}
+          id={Style.btn}
 
-        className={`button ${current === total}`}
-        onClick={() => changePage(paginate)}
-      >
-        End
-      </button>
+          className={`button ${current === total}`}
+          onClick={() => changePage(paginate)}
+        >
+          End
+        </button>
+      {/* </span> */}
     </div>
   );
 }

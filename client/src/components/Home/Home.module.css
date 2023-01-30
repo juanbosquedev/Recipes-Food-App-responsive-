@@ -1,23 +1,28 @@
+.home {
+  display: grid;
+  justify-content: center;
+}
 .cards {
   margin: 3rem;
-  width: fit-content;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
+  width: fit-content;
   min-height: 30vw;
 }
 .main {
-  display: grid;
+  display: flex;
   flex-direction: row;
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
   padding-top: 8px;
-  padding: 8px;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  margin-right: 1px;
 }
 select {
   height: 23px;
@@ -48,29 +53,29 @@ select > option {
 @media only screen and (max-width: 600px) {
   .cards {
     display: grid;
-
     grid-template-columns: repeat(1, 1fr);
-
-    justify-content: center;
+    justify-items: center;
     align-items: center;
-
     width: 80%;
   }
   .home {
     display: grid;
-   width: 100%;
-   justify-content: center;
-   align-items: center;
- 
+    width: 100%;
+  }
+  .main {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 90%;
+  }
+  .paginate {
+    background-color: red;
+  }
+  .search {
+    background-color: red;
+
   }
   .main > span {
     display: none;
-  }
-  .main {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
   }
 }

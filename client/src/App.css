@@ -49,11 +49,7 @@ body {
     animation: App-logo-spin infinite 20s linear;
   }
   body {
-    /* background-image: none;
-    background-color: blue; */
-
-  /* background-size: cover;
-  max-width: fit-content; */
-
+    background-size: 100% 100%;
+    background-attachment: fixed;
   }
 }

@@ -91,6 +91,10 @@ section > span {
 @media only screen and (max-width: 600px) {
   .card {
     display: grid;
-    width: 70%;
+    width: 80%;
   }
+  .title {
+    height: 20px;
+  }
+
 }

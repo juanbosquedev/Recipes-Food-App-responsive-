@@ -210,17 +210,7 @@ export default function CreateRecipe() {
           <h6 Style="color:white">{errors.cookingTime}</h6>
         )}
       </div>
-      {/* <label>tipo de plato: </label>
-        <input
-        className={Style.placeHolder}
-        name="dishType"
-        type="text"
-        value={state.dishType}
-        onChange={(e) => {
-          handleChangeDishType(e);
-        }}
-        />
-      {errors.dishType && <p>{errors.dishType}</p>} */}
+   
       <div className={Style.long}>
         <label>Summary: </label>
         <textarea

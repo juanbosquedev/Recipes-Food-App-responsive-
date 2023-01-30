@@ -55,10 +55,32 @@
         border: 20px;
         margin-right: 5px ;
         padding-right: 5px;
+        padding-top: 2rem;
         text-align: justify;
     }
 
-
+    @media only screen and (max-width: 600px) {
+        .contenedor{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+       
+        }
+        .main {
+            display: grid;
+            justify-items: center;
+            grid-template-columns: repeat(1, 1fr);
+            justify-content: space-between;
+            margin-right: 2rem;
+        }
+        .details {
+            display: grid;
+            padding-left: 2rem;
+            padding-top: 2rem;
+            margin-right: 0cm;
+            justify-content: space-between;
+        }
+     
+    }
 
 
 

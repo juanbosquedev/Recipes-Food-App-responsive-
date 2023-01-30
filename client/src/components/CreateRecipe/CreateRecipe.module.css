@@ -4,7 +4,7 @@
   left: 15rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  background-image: url('https://www.istockphoto.com/photo/healthy-food-healthy-eating-background-fruit-vegetable-berry-vegetarian-eating-gm1409514526-460033219?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fingredients&utm_term=ingredients%3A%3A%3A');
+  background-image: url("https://www.istockphoto.com/photo/healthy-food-healthy-eating-background-fruit-vegetable-berry-vegetarian-eating-gm1409514526-460033219?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fingredients&utm_term=ingredients%3A%3A%3A");
   justify-content: center;
   justify-items: center;
 
@@ -138,26 +138,24 @@ h6 {
   border: #790c0c solid 1px;
 }
 @media only screen and (max-width: 600px) {
-  .background{
+  .background {
     display: grid;
-    overflow-y: scroll;
-    flex-direction: column;
-    margin-left:1px;
-
     grid-template-columns: repeat(1, 1fr);
-    justify-content: flex-start;
-
+    left: 1rem;
+    width: 80%;
+    justify-items: center;
+    padding-top: 0rem;
+    margin-top: 0rem;
+    height: 700px;
   }
-  .short {
-    display:grid;
-    overflow-y: scroll;
+  .button {
+    left:0rem;
+    justify-content: center;
   }
-  .long {
-    display:grid;
-    overflow-y: scroll;
-   
-  }
+ .long > textarea{
+  height: 4rem;
+ }
+ .short {
+  top:0px;
+ }
 }
-
-
-   
