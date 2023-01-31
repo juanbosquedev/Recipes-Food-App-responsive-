@@ -54,7 +54,7 @@ export function get_Detail(id) {
 export function create_Recipe(object) {
   return async function (dispatch) {
     try {
-      const { data } = await axios.post(REACT_APP_API_URL, object);
+      const { data } = await axios.post(`${REACT_APP_API_URL}/recipes`, object);
       return dispatch({ type: CREATE_RECIPE, payload: data });
     } catch (error) {
       return dispatch({ type: CREATE_RECIPE, payload: error });
