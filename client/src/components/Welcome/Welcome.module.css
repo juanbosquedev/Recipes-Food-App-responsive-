@@ -1,67 +1,125 @@
 .Welcome {
-    position:fixed;
-    padding-left: 12px ;
-    display: flex;
-    padding: auto;
-    background-image: url('https://media.istockphoto.com/id/941858854/es/foto/hierbas-y-especias-para-cocinar-sobre-fondo-oscuro.jpg?s=612x612&w=0&k=20&c=-tjnXFW99fDvIhJ1eoPk_5HKdPl0Iup4MkIeu7TL_00=');
-    background-size: cover;
-    /* background-position: center;  */
-    /* background-attachment: fixed; */
-    width: 100vw; 
-    height: 900px;
-    text-decoration: none;
-    max-height: 100%;
-    
-}
-.header{
+  position: relative;
+  padding-left: 12px;
+  display: grid;
+  padding: auto;
+  justify-content: center;
+
+  background-image: url("https://media.istockphoto.com/id/941858854/es/foto/hierbas-y-especias-para-cocinar-sobre-fondo-oscuro.jpg?s=612x612&w=0&k=20&c=-tjnXFW99fDvIhJ1eoPk_5HKdPl0Iup4MkIeu7TL_00=");
+  background-size: cover;
+
+  text-decoration: none;
+
+  height: 730px;
 }
 
-    .lbl{
-        backdrop-filter: blur(8px);
-
-        display: flex;
-        margin-top: 3rem;
-        font-size: 45px;
-        margin-top: 3rem;
-        color:green;
-        justify-content: center;
-    }
-
-
-.text{
-    background-color: gray;
-    border-radius: 90px;
-    width: 10px;
-    height: 10px;
-    position: fixed;
-    color: aqua;
-    font-family: 'Times New Roman', Times, serif;
-    display: flex;
-    padding-left: 30%;
-    text-decoration: none;
-    padding-top: 13%;
-    align-items: center;
-    text-decoration: none;
-
-    cursor:grab
-}
-.text:hover{
-    color: crimson;
+.lbl {
+  position: relative;
+  display: grid;
+  backdrop-filter: blur(8px);
+  width: 40%;
+  margin-top: 3rem;
+  font-size: 45px;
+  left: 30%;
+  color: yellow;
 }
 
+.intro {
+  position: relative;
+  backdrop-filter: blur(16px);
+  display: flexbox;
+  color:yellow;
+  font-weight: bolder;
+  font-size: 20px;
+  padding-left: 4px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 10%;
+  margin-top: 5rem;
+  left: 25%;
+}
+.text {
+  position: relative;
+  display: grid;
+  font-size: 30px;
+  width: 28rem;
+  height: 2rem;
+  border-radius: 90px;
+  background-color: black;
+  left: 35%;
+ 
+  margin-top: 5rem;
+  justify-content: center;
+  color: orange;
+  font-family: "Times New Roman", Times, serif;
+  top: 10%;
+  text-decoration: none;
+
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  cursor: grab;
+}
+.text:hover {
+  border: 1px white solid;
+  color: aqua;
+}
 
 @media only screen and (max-width: 600px) {
-.Welcome{
-    background-size: cover;
-    background-attachment: fixed;
+  .Welcome {
+
+    background-attachment: fixed, scroll;
     background-repeat: no-repeat;
-    height: 900px;
-}
-.lbl{
+    background-size: cover;
+    height: 760px;
+  }
+  .lbl {
     display: flex;
     margin-top: 3rem;
-    font-size: 45px;
+    font-size: 25px;
     margin-top: 3rem;
-    color:green;
+    justify-content: flex-start;
+  }
+  .text {
+    position: relative;
+    display: grid;
+    font-size: 15px;
+    width: 14rem;
+    height: 2rem;
+    border-radius: 90px;
+    background-color: black;
+    left: 25%;
+   
+    margin-top: 5rem;
+    justify-content: center;
+    color: orange;
+    font-family: "Times New Roman", Times, serif;
+    top: 10%;
+    text-decoration: none;
+  
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  
+    cursor: grab;
+  }
+  .intro {
+    position: relative;
+    backdrop-filter: blur(16px);
+    display: flexbox;
+    color:yellow;
+    font-weight: bolder;
+    font-size: 20px;
+    padding-left: 4px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 20%;
+    margin-top: 5rem;
+    left: 15%;
+  }
 }
-}  
