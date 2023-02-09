@@ -15,7 +15,7 @@ import {
 
 const initialState = {
   recipes: [],
-  
+  allRecipes:[],
   details: [],
   diets: [],
   created: [],
@@ -40,6 +40,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         recipes: action.payload,
+        allRecipes: action.payload,
       };
     }
 
