@@ -15,6 +15,7 @@ import {
 
 const initialState = {
   recipes: [],
+  
   details: [],
   diets: [],
   created: [],
@@ -119,7 +120,7 @@ const reducer = (state = initialState, action) => {
     }
 
     case DIETS_FILTER: {
-      let filter = state.recipes.filter((el) =>
+      let filter = state.allRecipes.filter((el) =>
         el.diets.includes(action.payload)
       );
 
