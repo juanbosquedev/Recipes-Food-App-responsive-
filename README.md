@@ -22,9 +22,9 @@ The recipes data come from spoonaqular api.
 ##Details
 <img src="./images/recipes-details.png"/>
 ##Recipes Created
-<img src="./images/recipes-create.png"/>
+<img src="./images/recipes-created.png"/>
 ##Form to create a recipe
-<img src="./images/recipes-formCreated.png"/>
+<img src="./images/recipes-formCreate.png"/>
 
 
 ![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
