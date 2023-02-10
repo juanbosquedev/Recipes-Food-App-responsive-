@@ -1,3 +1,32 @@
+##Recipes Food
+
+An application whit a landing page, wich introduce in a home component where you can navigate trought several recipes trhogh a paginate, also you can search by ingredient or diets type, do sortings by diets, health score, and alphabeticly.
+In the other hand, clicking the title name of the recipes it will you show the recipes details.
+
+In other section you can see the recipes exclusively created by users.
+
+And finlly trought a form you be able to create your own recipe, being able to add an image among others.
+
+The app was made in :
+- Front End side: Javascript, React-Redux, CSS.
+- Back End side: PostgreSql, Sequelize, Express, RESTapi web.
+
+The recipes data come from spoonaqular api.
+
+##Images
+
+##Landing
+<img src=""/>
+##Home
+<img src=""/>
+##Details
+<img src=""/>
+##Recipes Created
+<img src=""/>
+##Form to create a recipe
+<img src=""/>
+
+
 ![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
 
 # Individual Project - Henry Food
