@@ -16,15 +16,15 @@ The recipes data come from spoonaqular api.
 ##Images
 
 ##Landing
-<img src=""/>
+<img src="./images/recipes-landing"/>
 ##Home
-<img src=""/>
+<img src="./images/recipes-home"/>
 ##Details
-<img src=""/>
+<img src="./images/recipes-details"/>
 ##Recipes Created
-<img src=""/>
+<img src="./images/recipes-create"/>
 ##Form to create a recipe
-<img src=""/>
+<img src="./images/recipes-formCreated"/>
 
 
 ![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
