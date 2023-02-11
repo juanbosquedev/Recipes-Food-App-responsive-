@@ -13,17 +13,21 @@ The app was made in :
 
 The recipes data come from spoonaqular api.
 
-##Images
+# Images
 
-##Landing
+# Landing
 <img src="./images/recipes-landing.png"/>
-##Home
+
+# Home
 <img src="./images/recipes-home.png"/>
-##Details
+
+# Details
 <img src="./images/recipes-details.png"/>
-##Recipes Created
+
+# Recipes Created
 <img src="./images/recipes-created.png"/>
-##Form to create a recipe
+
+# Form to create a recipe
 <img src="./images/recipes-formCreate.png"/>
 
 
