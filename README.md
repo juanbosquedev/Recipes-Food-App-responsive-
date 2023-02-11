@@ -1,11 +1,11 @@
 ##Recipes Food
 
-An application whit a landing page, wich introduce in a home component where you can navigate trought several recipes trhogh a paginate, also you can search by ingredient or diets type, do sortings by diets, health score, and alphabeticly.
-In the other hand, clicking the title name of the recipes it will you show the recipes details.
+An application whit a landing page, wich introduce in a home component where you can navigate through several recipes through a paginate, also you can search by ingredient or diet type, do sorting by diet, health score, and alphabetically.
+On the other hand, clicking the title name of the recipes it will show the recipes details.
 
 In other section you can see the recipes exclusively created by users.
 
-And finlly trought a form you be able to create your own recipe, being able to add an image among others.
+And finally through a form you be able to create your own recipe, being able to add an image among others.
 
 The app was made in :
 - Front End side: Javascript, React-Redux, CSS.
