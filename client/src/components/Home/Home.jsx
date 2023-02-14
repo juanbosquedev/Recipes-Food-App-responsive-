@@ -124,7 +124,7 @@ export default function Home() {
                 diets={el.diets}
               />
             );
-          }) : <h5 Style="color:white">Loading...</h5>}
+          }) : <h5 Style={Style.loader}></h5>}
       </div>
     </div>
   );
