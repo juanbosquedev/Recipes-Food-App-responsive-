@@ -1,7 +1,8 @@
 .Welcome {
-    position:fixed;
+    /* position:fixed; */
     padding-left: 12px ;
     display: flex;
+    flex-direction: row;
     padding: auto;
     background-image: url('https://media.istockphoto.com/id/941858854/es/foto/hierbas-y-especias-para-cocinar-sobre-fondo-oscuro.jpg?s=612x612&w=0&k=20&c=-tjnXFW99fDvIhJ1eoPk_5HKdPl0Iup4MkIeu7TL_00=');
     background-size: cover;
@@ -13,11 +14,9 @@
     max-height: 100%;
     
 }
-.header{
-}
 
 .lbl {
-  display: grid;
+  display: flex;
   -webkit-text-stroke: 1px black;
   width: 50%;
   margin-top: 3rem;
@@ -77,6 +76,6 @@
     margin-top: 3rem;
     font-size: 45px;
     margin-top: 3rem;
-    color:green;
+    color:yellow;
 }
 }  
