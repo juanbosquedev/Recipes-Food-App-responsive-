@@ -1,10 +1,10 @@
 .Welcome {
-    /* position:fixed; */
-    padding-left: 12px ;
-    display: flex;
-    flex-direction: row;
+
+    
+    display: grid;
+ 
     padding: auto;
-    background-image: url('https://media.istockphoto.com/id/941858854/es/foto/hierbas-y-especias-para-cocinar-sobre-fondo-oscuro.jpg?s=612x612&w=0&k=20&c=-tjnXFW99fDvIhJ1eoPk_5HKdPl0Iup4MkIeu7TL_00=');
+    background-image: url('../../Images/bg-welcome.png');
     background-size: cover;
     /* background-position: center;  */
     /* background-attachment: fixed; */
@@ -12,28 +12,30 @@
     height: 900px;
     text-decoration: none;
     max-height: 100%;
+    justify-content: center;
+
     
 }
 
 .lbl {
-  display: flex;
+  display: grid;
   -webkit-text-stroke: 1px black;
-  width: 50%;
+  
   margin-top: 3rem;
   font-size: 45px;
   font-weight: 600;
   color: yellow;
+  justify-content: center;
 }
 
 .intro {
-  display: flex;
+  display: grid;
   -webkit-text-stroke: 1px black;
   color: yellow;
   font-size: 20px;
   justify-content: center;
   align-items: center;
-  width: 60%;
-  height: 10%;
+
   margin-top: 5rem;
   font-weight: 900;
 }
@@ -48,6 +50,7 @@
 
   margin-top: 5rem;
   justify-content: center;
+  justify-items: center;
   color: orange;
   font-family: "Times New Roman", Times, serif;
   top: 10%;
