@@ -16,8 +16,8 @@ export default function RecipesCreated() {
   }, [dispatch]);
   return (
     <div className={Style.main}>
-      {/* {recetasCreadas
-        ? recetasCreadas.map((el) => {
+      {recetasCreadas
+       ? recetasCreadas.map((el) => {
             return (
               <Card
                 key={el.id}
@@ -31,7 +31,7 @@ export default function RecipesCreated() {
               />
             );
           })
-        : alert("todavía no has creado una receta")} */}
+        : alert("There is not recipe created yet")}
     </div>
   );
 }

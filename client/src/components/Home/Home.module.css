@@ -2,6 +2,28 @@
   display: grid;
   justify-content: center;
 }
+.loader {
+  border: 16px solid orangered;
+  border-top: 16px solid #790c0c;
+  border-bottom: 16px solid #790c0c;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+
 .cards {
   margin: 3rem;
   display: grid;
@@ -68,13 +90,7 @@ select > option {
 
     width: 90%;
   }
-  .paginate {
-    background-color: red;
-  }
-  .search {
-    background-color: red;
 
-  }
   .main > span {
     display: none;
   }

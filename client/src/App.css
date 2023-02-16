@@ -7,8 +7,8 @@ input {
 }
 
 body {
-  background-image: url("https://media.istockphoto.com/id/924476838/es/foto/deliciosa-pizza-con-los-ingredientes-y-especias.jpg?s=612x612&w=0&k=20&c=S1DsWSKnoRnF8fAinomrzI1CVszVQvyepHeWMNPR73g=");
-
+  /* background-image: url("https://media.istockphoto.com/id/924476838/es/foto/deliciosa-pizza-con-los-ingredientes-y-especias.jpg?s=612x612&w=0&k=20&c=S1DsWSKnoRnF8fAinomrzI1CVszVQvyepHeWMNPR73g="); */
+  background-image: url( "./Images/bg-food.png");
   background-attachment: fixed, scroll;
   background-repeat: no-repeat, repeat-y;
   background-size: cover;

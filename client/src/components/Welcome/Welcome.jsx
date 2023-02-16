@@ -5,13 +5,13 @@ import Style from "../Welcome/Welcome.module.css";
 export default function Welcome() {
   return (
     <div className={Style.Welcome}>
-      <div className={Style.header}>
-
       <label className={Style.lbl}>Recipes Food</label>
-      <Link to="/home" >
-        <h1 className={Style.text} >Start</h1>
+      <div className={Style.intro}>
+        <p>Get or create a recipes wich more suit to you!</p>
+      </div>
+      <Link className={Style.text} to="/home">
+        Begin your own experience
       </Link>
     </div>
-      </div>
   );
 }

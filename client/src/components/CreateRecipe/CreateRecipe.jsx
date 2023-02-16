@@ -82,7 +82,7 @@ export default function CreateRecipe() {
       alert("Fill properly");
     } else {
       if (state.name.length < 3) return alert("Fill all the filds");
-
+       console.log(state, " I am state create recipe component line 85")
       dispatch(create_Recipe(state));
       setState({
         name: "",
@@ -150,17 +150,7 @@ export default function CreateRecipe() {
         />
 
         <label>Diet Type: </label>
-        {/* 
-            <option Style="padding-bottom:4px" value="default">Diets Order</option>
-            {DietsTypes &&
-              DietsTypes.map((el) => {
-                return (
-                  <option key={el.id} value={el.name}>
-                    {el.name}
-                  </option>
-                );
-              })}
-          </select> */}
+      
         <select
           id="firstSelect"
           className={Style.placeHolderDiet}

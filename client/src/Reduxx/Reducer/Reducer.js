@@ -17,6 +17,7 @@ const initialState = {
   recipes: [],
   details: [],
   diets: [],
+  allRecipes: [],
   created: [],
   msg: {},
 };
@@ -38,7 +39,8 @@ const reducer = (state = initialState, action) => {
     case GET_RECIPE: {
       return {
         ...state,
-        recipes: action.payload,
+        allRecipes: action.payload,
+        recipes:action.payload,
       };
     }
 
@@ -51,7 +53,7 @@ const reducer = (state = initialState, action) => {
     case CREATE_RECIPE: {
       return {
         ...state,
-        msg: "creada con exito!",
+        msg: "successfully created!",
       };
     }
     case GET_DIETS: {
@@ -119,7 +121,7 @@ const reducer = (state = initialState, action) => {
     }
 
     case DIETS_FILTER: {
-      let filter = state.recipes.filter((el) =>
+      let filter = state.allRecipes.filter((el) =>
         el.diets.includes(action.payload)
       );
 

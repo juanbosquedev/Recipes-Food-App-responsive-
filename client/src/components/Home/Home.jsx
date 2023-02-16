@@ -109,7 +109,7 @@ export default function Home() {
         </span>
       </div>
       <div className={Style.cards}>
-        {paginado &&
+        {paginado ?
           paginado.map((el) => {
             return (
               <Card
@@ -124,7 +124,7 @@ export default function Home() {
                 diets={el.diets}
               />
             );
-          })}
+          }) : <h5 className={Style.loader}></h5>}
       </div>
     </div>
   );

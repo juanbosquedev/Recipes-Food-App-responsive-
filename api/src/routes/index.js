@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { default: axios } = require("axios");
+
 
 const { Router } = require("express");
 const { Op, Association } = require("sequelize");
@@ -9,7 +9,7 @@ const {
   allDiets,
 } = require("../downloadData/downloading");
 const { Recipe, DietsTypes } = require("../db");
-const { getInfo } = require("../downloadData/reutilizable");
+
 
 let RecipesLoad = 0;
 RecipesLoad === 0 && getAllApiInformation();
@@ -92,6 +92,7 @@ router.get("/recipes", async (req, res) => {
   }
 });
 
+
 router.post("/recipes", async (req, res) => {
   const {
     name,
@@ -104,8 +105,7 @@ router.post("/recipes", async (req, res) => {
     cookingTime,
   } = req.body;
 
-  if (!name || !summary || !steps || !diets)
-    return res.status(404).send("Faltan enviar datos obligatorios");
+  if (!name || !summary || !steps || !diets) return res.status(404).send("Faltan enviar datos obligatorios");
   diets.map(async (el) => {
     const findDiet = await DietsTypes.findOrCreate({
       where: {
