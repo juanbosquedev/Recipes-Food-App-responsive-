@@ -21,12 +21,7 @@ export function get_recipe(name) {
     try {
       const { data } = await axios.get(
         `${REACT_APP_API_URL}/recipes?name=${name}`,
-//         {
-//           headers: {
-//             "Content-Type": "application/json",
-//             Accept: "application/json",
-//           },
-//         }
+      
       );
       console.log(data, " soy data linea 21");
       return dispatch({ type: GET_RECIPE, payload: data });
@@ -54,6 +49,7 @@ export function get_Detail(id) {
 export function create_Recipe(object) {
   return async function (dispatch) {
     try {
+      console.log(object, " soy data create")
       const { data } = await axios.post(`${REACT_APP_API_URL}/recipes`, object);
       return dispatch({ type: CREATE_RECIPE, payload: data });
     } catch (error) {
