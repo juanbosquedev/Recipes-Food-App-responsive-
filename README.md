@@ -1,3 +1,38 @@
+# Recipes Food
+
+- Deploy Link: https://recipes-food.onrender.com/
+
+An application whit a landing page, wich introduce in a home component where you can navigate through several recipes through a paginate, also you can search by ingredient or diet type, do sorting by diet, health score, and alphabetically.
+On the other hand, clicking the title name of the recipes it will show the recipes details.
+
+In other section you can see the recipes exclusively created by users.
+
+And finally through a form you be able to create your own recipe, being able to add an image among others.
+
+The app was made in :
+- Front End side: Javascript, React-Redux, CSS.
+- Back End side: PostgreSql, Sequelize, Express, RESTapi web.
+
+The recipes data come from spoonaqular api.
+
+# Images
+
+# Landing
+<img src="./images/recipes-landing.png"/>
+
+# Home
+<img src="./images/recipes-home.png"/>
+
+# Details
+<img src="./images/recipes-details.png"/>
+
+# Recipes Created
+<img src="./images/recipes-created.png"/>
+
+# Form to create a recipe
+<img src="./images/recipes-formCreate.png"/>
+
+
 ![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
 
 # Individual Project - Henry Food
@@ -187,3 +222,4 @@ __IMPORTANTE__: No está permitido utilizar los filtrados, ordenamientos y pagin
 - [ ] Al menos tener un componente del frontend con sus tests respectivos
 - [ ] Al menos tener una ruta del backend con sus tests respectivos
 - [ ] Al menos tener un modelo de la base de datos con sus tests respectivos
+

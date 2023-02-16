@@ -48,18 +48,7 @@ export default function CreateRecipe() {
       })
     );
   };
-  // const handleChangeDishType = (e) => {
-  //   setErrors(
-  //     validate({
-  //       ...state,
-  //       diets: [...state.diets, e.target.value],
-  //     })
-  //   );
-  //   setState({
-  //     ...state,
-  //     dishType: [e.target.value],
-  //   });
-  // };
+
 
   const handleChangeDiets = (e) => {
     setState({

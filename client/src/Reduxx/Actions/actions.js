@@ -20,7 +20,14 @@ export function get_recipe(name) {
   return async function (dispatch) {
     try {
       const { data } = await axios.get(
-        `${REACT_APP_API_URL}/recipes?name=${name}`);
+        `${REACT_APP_API_URL}/recipes?name=${name}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
+      );
       console.log(data, " soy data linea 21");
       return dispatch({ type: GET_RECIPE, payload: data });
     } catch (error) {
