@@ -20,6 +20,9 @@ The recipes data come from spoonaqular api.
 # Landing
 <img src="./images/recipes-landing.png"/>
 
+#Animated Loader
+<img src="./images/loader animation.png"/>
+
 # Home
 <img src="./images/recipes-home.png"/>
 
