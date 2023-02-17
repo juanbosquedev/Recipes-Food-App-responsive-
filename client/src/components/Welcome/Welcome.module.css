@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: row;
     padding: auto;
-    background-image: url('https://media.istockphoto.com/id/941858854/es/foto/hierbas-y-especias-para-cocinar-sobre-fondo-oscuro.jpg?s=612x612&w=0&k=20&c=-tjnXFW99fDvIhJ1eoPk_5HKdPl0Iup4MkIeu7TL_00=');
+    background-image: url('../../Images/bg-welcome.png');
     background-size: cover;
     /* background-position: center;  */
     /* background-attachment: fixed; */
