@@ -31,7 +31,7 @@ export default function Card({
           <h4 className={Style.title}>{name}</h4>
         </Link>
         <div className={Style.image}>
-        <img src={image} alt="" />
+        <img src={image || "../../Images/default-image.png"} alt="" />
       </div>
         <section className={Style.section}>
           <p>CookingTime </p>
