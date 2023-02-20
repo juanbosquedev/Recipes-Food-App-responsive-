@@ -31,7 +31,7 @@ export default function RecipesCreated() {
 //               />
 //             );
 //           })
-//         : alert("There is not a recipe create yet")}}
+//         : alert("There is not a recipe created yet")}}
     </div>
   );
 }
