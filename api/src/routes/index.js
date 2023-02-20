@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { default: axios } = require("axios");
+// const { default: axios } = require("axios");
 
 const { Router } = require("express");
 const { Op, Association } = require("sequelize");
@@ -22,18 +22,16 @@ const router = Router();
 // Ejemplo: router.use('/auth', authRouter);
 router.get("/recipes/:id", async (req, res) => {
   const { id } = req.params;
-  console.log("soy id ", id);
+  if (!id) return res.status(400).send("not found");
   try {
     const data = await Recipe.findOne({
       where: {
         id: { [Op.eq]: id },
       },
     });
-    if (!id) return res.status(400).send("not found");
     return res.status(200).json(data);
   } catch (error) {
-    console.log(error);
-    return res.status(400).send("error en la busqueda de detalles").json(error);
+    return res.status(400).send("serch details error").json(error);
   }
 });
 
@@ -44,10 +42,9 @@ router.get("/recipesCreated", async (req, res) => {
     },
   });
   try {
-    if (!created) return res.status(400).send(" receta no  creada");
+    if (!created) return res.status(400).send(" recipe not created");
     return res.status(200).json(created);
   } catch (error) {
-    console.log(error, " soy error de mostrar recetas creadas");
     return res.status(400).json(error);
   }
 });
@@ -79,7 +76,7 @@ router.get("/recipes", async (req, res) => {
         if (recetas.length > 0) {
           return res.status(200).json(recetas);
         } else {
-          return "try with another product!";
+          return res.status(300).send("try with another product!");
         }
       }
     } else {
@@ -119,15 +116,16 @@ router.post("/recipes", async (req, res) => {
     const receta = await Recipe.create(req.body);
     return res.status(200).json(receta);
   } catch (error) {
-    console.log(error, "soy error");
     return res.status(400).json(error);
   }
 });
 
 router.get("/diets", async (req, res) => {
   let DietsTypesLoad = 0;
+
   DietsTypesLoad === 0 && allDiets();
 
+  
   const diets = await DietsTypes.findAll({
     include: Recipe,
   });
