@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon -L"
   },
-  "author": "Juan",
+  "author": "Henry",
   "license": "ISC",
   "engines": {
     "node": ">=12.18.3",
