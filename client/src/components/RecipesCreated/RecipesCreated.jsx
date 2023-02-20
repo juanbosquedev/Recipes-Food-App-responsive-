@@ -16,22 +16,22 @@ export default function RecipesCreated() {
   }, [dispatch]);
   return (
     <div className={Style.main}>
-      {{recetasCreadas
-        ? recetasCreadas.map((el) => {
-            return (
-              <Card
-                key={el.id}
-                id={el.id}
-                name={el.name}
-                deleteRecipe={deleteRecipeCreated}
-                image={el.image}
-                servings={el.servings}
-                cookingTime={el.cookingTime}
-                diets={el.diets}
-              />
-            );
-          })
-        : alert("There is not a recipe create yet")}}
+//       {{recetasCreadas
+//         ? recetasCreadas.map((el) => {
+//             return (
+//               <Card
+//                 key={el.id}
+//                 id={el.id}
+//                 name={el.name}
+//                 deleteRecipe={deleteRecipeCreated}
+//                 image={el.image}
+//                 servings={el.servings}
+//                 cookingTime={el.cookingTime}
+//                 diets={el.diets}
+//               />
+//             );
+//           })
+//         : alert("There is not a recipe create yet")}}
     </div>
   );
 }
