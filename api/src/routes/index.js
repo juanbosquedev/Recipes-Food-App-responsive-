@@ -1,6 +1,4 @@
 require("dotenv").config();
-// const { default: axios } = require("axios");
-
 const { Router } = require("express");
 const { Op, Association } = require("sequelize");
 const { API_KEY } = process.env;
@@ -103,7 +101,8 @@ router.post("/recipes", async (req, res) => {
   } = req.body;
 
   if (!name || !summary || !steps || !diets)
-    return res.status(404).send("Faltan enviar datos obligatorios");
+    return res.status(404).send("some date it is needed to be filled");
+   if(!image) req.body.image = "https://media.istockphoto.com/id/1388791611/photo/teppanyaki-style.jpg?b=1&s=170667a&w=0&k=20&c=o4FL_2iyEO2XQiliXts-JphIFAhXg5BYlxvjxmBbh7E="
   diets.map(async (el) => {
     const findDiet = await DietsTypes.findOrCreate({
       where: {
