@@ -92,6 +92,7 @@ router.post("/recipes", async (req, res) => {
   const {
     name,
     summary,
+    idOriginal,
     healthScore,
     steps,
     image,
