@@ -1,38 +1,37 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { get_Diets, get_recipe } from "../../Reduxx/Actions/actions";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Style from "./Search.module.css";
 import { useEffect } from "react";
 
-export default function SearchBar() {
+export default function SearchBar({ cath }) {
   const dispatch = useDispatch();
-  const recipes = useSelector((state) => state.get_recipe);
   const ref = useRef(null);
+  const [state, setState] = useState("");
 
   function handleChanges(e) {
+    const inputValue = ref.current.value;
     e.preventDefault();
+    setState(inputValue);
   }
   function handleSubmit(e) {
-    e.preventDefault();
-
-    const inputValue = ref.current.value;
-    dispatch(get_recipe(inputValue));
+    dispatch(get_recipe(state));
+    cath(state);
+    setState("");
   }
-  useEffect(() => {
-    dispatch(get_recipe(" "));
-    dispatch(get_Diets());
-  }, [recipes]); 
+
   return (
     <div>
       <form
         onSubmit={(e) => {
+          e.preventDefault();
           handleSubmit(e);
-          
         }}
       >
         <input
           ref={ref}
+          value={state}
           type="text"
           placeholder="Searching..."
           onChange={(e) => handleChanges(e)}
