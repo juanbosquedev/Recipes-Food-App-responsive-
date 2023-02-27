@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Nav from "../Nav/Nav";
+
 import Card from "../Card/Card";
 import { useEffect } from "react";
 import Paginate from "../Paginate/Paginate";
@@ -8,7 +8,6 @@ import Style from "../Home/Home.module.css";
 import {
   get_Diets,
   get_recipe,
-  showRecipesCreated,
   dietsFilter,
   ScoreOrderA,
   ScoreOrderD,
@@ -20,23 +19,23 @@ import SearchBar from "../Search/SearchBar";
 
 export default function Home() {
   const recipes = useSelector((state) => state.recipes);
+  const  [input, setInput]=useState('')
   const DietsTypes = useSelector((state) => state.diets);
   const dispatch = useDispatch();
   const [paginado, setPaginado] = useState();
-
+  function cath(value){
+    setInput(value)
+   }
   useEffect(() => {
     if (recipes.length === 0) {
       dispatch(get_Diets());
-      dispatch(get_recipe());
+      dispatch(get_recipe(input));
       setPaginado();
       deleteRecipe();
     }
   }, [dispatch, recipes]);
 
-  useEffect(() => {
-    dispatch(get_Diets());
-    dispatch(get_recipe());
-  }, []);
+
 
   function HandlerDietsFilter(e) {
     dispatch(dietsFilter(e.target.value));
@@ -67,7 +66,7 @@ export default function Home() {
           setPaginado={setPaginado}
         ></Paginate>
 
-        <SearchBar className={Style.search} />
+        <SearchBar cath={cath} className={Style.search} />
         <span>
           <select
             Style="background-color:#790c0c; border: black solid 2px;"
