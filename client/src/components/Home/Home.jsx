@@ -30,10 +30,9 @@ export default function Home() {
     if (recipes.length === 0) {
       dispatch(get_Diets());
       dispatch(get_recipe(input));
-      setPaginado();
-      deleteRecipe();
     }
   }, [dispatch, recipes]);
+ if(recipes.length === 0) dispatch(get_recipe(input))
 
 
 
