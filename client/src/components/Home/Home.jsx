@@ -27,7 +27,9 @@ export default function Home() {
   const [paginado, setPaginado] = useState();
   useEffect(() => dispatch(cleanUpDetails()), []);
 
-  if (recipes.length === 0) dispatch(get_recipe(input));
+ if (recipes.length === 0) {
+    dispatch(get_recipe(input));
+    dispatch(get_Diets())}
 
   function HandlerDietsFilter(e) {
     dispatch(dietsFilter(e.target.value));
