@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { cleanUpDetails } from "../../Reduxx/Actions/actions";
 import { get_Detail } from "../../Reduxx/Actions/actions";
 import Style from "./CardDetail..module.css";
 
@@ -10,13 +9,15 @@ export default function CardDetail(props) {
   const { id } = useParams();
   
   const dispatch = useDispatch();
-  dispatch(get_Detail(id));
   useEffect(() => {
-    return () => dispatch(cleanUpDetails());
+    dispatch(get_Detail(id));
   }, []);
 
   let details = useSelector((state) => state.details);
+
   return (
+    
+  
     <div>
       <h1 className={Style.title}>{details.name}</h1>
 
@@ -43,4 +44,5 @@ export default function CardDetail(props) {
       </div>
     </div>
   );
+
 }
