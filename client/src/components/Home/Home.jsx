@@ -32,7 +32,7 @@ export default function Home() {
 //       dispatch(get_recipe(input));
 //     }
 //   }, [dispatch, recipes]);
- if(recipes.length === 0) dispatch(get_recipe(input))
+//  if(recipes.length === 0) dispatch(get_recipe(input))
 
 
 
