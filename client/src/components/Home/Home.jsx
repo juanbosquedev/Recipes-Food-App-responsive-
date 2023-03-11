@@ -26,12 +26,12 @@ export default function Home() {
   function cath(value){
     setInput(value)
    }
-  useEffect(() => {
-    if (recipes.length === 0) {
-      dispatch(get_Diets());
-      dispatch(get_recipe(input));
-    }
-  }, [dispatch, recipes]);
+//   useEffect(() => {
+//     if (recipes.length === 0) {
+//       dispatch(get_Diets());
+//       dispatch(get_recipe(input));
+//     }
+//   }, [dispatch, recipes]);
  if(recipes.length === 0) dispatch(get_recipe(input))
 
 
