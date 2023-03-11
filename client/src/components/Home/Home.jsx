@@ -17,24 +17,17 @@ import {
 } from "../../Reduxx/Actions/actions";
 import SearchBar from "../Search/SearchBar";
 
+import { cleanUpDetails } from "../../Reduxx/Actions/actions";
+
 export default function Home() {
   const recipes = useSelector((state) => state.recipes);
-  const  [input, setInput]=useState('')
+  const [input, setInput] = useState("");
   const DietsTypes = useSelector((state) => state.diets);
   const dispatch = useDispatch();
   const [paginado, setPaginado] = useState();
-  function cath(value){
-    setInput(value)
-   }
-//   useEffect(() => {
-//     if (recipes.length === 0) {
-//       dispatch(get_Diets());
-//       dispatch(get_recipe(input));
-//     }
-//   }, [dispatch, recipes]);
-//  if(recipes.length === 0) dispatch(get_recipe(input))
+  useEffect(() => dispatch(cleanUpDetails()), []);
 
-
+  if (recipes.length === 0) dispatch(get_recipe(input));
 
   function HandlerDietsFilter(e) {
     dispatch(dietsFilter(e.target.value));
@@ -65,7 +58,7 @@ export default function Home() {
           setPaginado={setPaginado}
         ></Paginate>
 
-        <SearchBar cath={cath} className={Style.search} />
+        <SearchBar setInput={setInput} className={Style.search} />
         <span>
           <select
             Style="background-color:#790c0c; border: black solid 2px;"
@@ -107,7 +100,7 @@ export default function Home() {
         </span>
       </div>
       <div className={Style.cards}>
-        {paginado ?
+        {paginado ? (
           paginado.map((el) => {
             return (
               <Card
@@ -122,7 +115,10 @@ export default function Home() {
                 diets={el.diets}
               />
             );
-          }) : <h5 className={Style.loader}></h5>}
+          })
+        ) : (
+          <h5 className={Style.loader}></h5>
+        )}
       </div>
     </div>
   );
