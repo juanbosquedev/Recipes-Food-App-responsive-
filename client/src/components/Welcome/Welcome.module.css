@@ -55,7 +55,7 @@
 
 @media only screen and (max-width: 600px) {
   .Welcome {
-    height: 580px;
+    height:100vh;
   }
   .lbl {
     height: fit-content;
