@@ -30,7 +30,7 @@ export default function RecipesCreated() {
               />
             );
           })
-        : alert("todavía no has creado una receta")}
+        : alert("There is not a recipe created yet")}
     </div>
   );
 }
