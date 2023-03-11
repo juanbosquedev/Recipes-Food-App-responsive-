@@ -9,9 +9,9 @@ export default function CardDetail(props) {
   const { id } = useParams();
   console.log(id, " soy id");
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(get_Detail(id));
-  }, [dispatch, id]);
+//   useEffect(() => {
+//     dispatch(get_Detail(id));
+//   }, [dispatch, id]);
   const details = useSelector((state) => state.details);
   console.log(details, " soy details");
   return (
