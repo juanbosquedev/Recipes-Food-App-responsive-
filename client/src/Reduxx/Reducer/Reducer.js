@@ -78,6 +78,7 @@ const reducer = (state = initialState, action) => {
       };
     }
 
+      
     case DELETE_RECIPE_CREATED: {
       return {
         ...state,
