@@ -11,12 +11,10 @@ import RecipesCreated from "./components/RecipesCreated/RecipesCreated";
 import CreateRecipe from "../src/components/CreateRecipe/CreateRecipe.jsx";
 
 function App() {
-  return (
-   
+  return (   
       <div >
         <Switch>
-      
-          <Route exact path="/" component={Welcome} />
+            <Route exact path="/" component={Welcome} />
           <React.Fragment>
             <section className="App">
             <Nav />
