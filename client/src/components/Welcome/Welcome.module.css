@@ -67,7 +67,8 @@
     font-size: 17px;
   }
   .text {
-    font-size: 20px;
+    color:red;
+    font-size: 17px;
     width: 15rem;
     align-content: center;
   }
