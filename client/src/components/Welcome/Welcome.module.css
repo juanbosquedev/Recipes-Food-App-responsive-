@@ -1,8 +1,6 @@
 .Welcome {
   display: grid;
-
   justify-content: space-evenly;
-
   background-image: url("../../Images/bg-welcome.png");
   background-size: cover;
   width: 100vw;
@@ -45,7 +43,6 @@
   justify-content: center;
   color: orange;
   font-family: "Times New Roman", Times, serif;
-
   cursor: grab;
 }
 .text:hover {
@@ -67,6 +64,7 @@
     font-size: 17px;
   }
   .text {
+    color: orange;
     font-size: 17px;
     width: 15rem;
     align-content: center;
