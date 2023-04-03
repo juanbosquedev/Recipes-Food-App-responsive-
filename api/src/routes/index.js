@@ -10,7 +10,7 @@ const { Recipe, DietsTypes } = require("../db");
 
 
 let RecipesLoad = 0;
-RecipesLoad === 0 && getAllApiInformation();
+// RecipesLoad === 0 && getAllApiInformation();
 
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
