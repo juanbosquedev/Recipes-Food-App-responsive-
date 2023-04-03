@@ -12,7 +12,6 @@ const getAllApiInformation = async () => {
   const verDb = await Recipe.findAll();
   
   if (verDb.length > 0) {
-    console.log("base precargada  ", verDb.length);
     return verDb;
   }
 
@@ -25,10 +24,8 @@ const getAllApiInformation = async () => {
   });
   try {
     const db = await Recipe.bulkCreate(dataPretended);
-    console.log("cargando db por 1° ", db.length);
     return db;
   } catch (error) {
-    console.log( "error db 1°time", error);
     return error;
   }
 };
@@ -38,7 +35,6 @@ const allDiets = async () => {
  
   const verDbDiets = await DietsTypes.findAll();
   if (verDbDiets.length > 0) {
-    console.log("base precargada diets", verDbDiets.length);
     return verDbDiets;
   }
   try {
@@ -57,7 +53,6 @@ const allDiets = async () => {
    
     
   } catch (error) {
-    console.log(error, "error catch");
     return error;
   }
 };
