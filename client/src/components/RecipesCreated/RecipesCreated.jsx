@@ -12,11 +12,10 @@ export default function RecipesCreated() {
   const recetasCreadas = useSelector((state) => state.created);
   useEffect(() => {
     dispatch(showRecipesCreated());
-    // dispatch(deleteRecipeCreated());
   }, [dispatch]);
   return (
     <div className={Style.main}>
-      {/* {recetasCreadas
+      {recetasCreadas
         ? recetasCreadas.map((el) => {
             return (
               <Card
@@ -31,7 +30,7 @@ export default function RecipesCreated() {
               />
             );
           })
-        : alert("todavía no has creado una receta")} */}
+        : alert("There is not a recipe created yet")}
     </div>
   );
 }

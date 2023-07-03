@@ -3,6 +3,7 @@ import {
   DELETE_RECIPE,
   GET_RECIPE,
   CREATE_RECIPE,
+  CLEAN_UP_DETAILS,
   GET_DIETS,
   SHOW_RECIPES_CREATED,
   DIETS_FILTER,
@@ -15,10 +16,9 @@ import {
 
 const initialState = {
   recipes: [],
-  allRecipes:[],
+  allRecipes: [],
   details: [],
   diets: [],
-  allRecipes: [],
   created: [],
   msg: {},
 };
@@ -41,6 +41,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         recipes: action.payload,
+        allRecipes:action.payload,
       };
     }
 
@@ -48,6 +49,13 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         details: action.payload,
+      };
+    }
+
+    case CLEAN_UP_DETAILS: {
+      return {
+        ...state,
+        details: [],
       };
     }
     case CREATE_RECIPE: {
@@ -70,6 +78,7 @@ const reducer = (state = initialState, action) => {
       };
     }
 
+      
     case DELETE_RECIPE_CREATED: {
       return {
         ...state,

@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { get_Detail } from "../../Reduxx/Actions/actions";
@@ -7,14 +7,17 @@ import Style from "./CardDetail..module.css";
 
 export default function CardDetail(props) {
   const { id } = useParams();
-  console.log(id, " soy id");
+  
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(get_Detail(id));
-  }, [dispatch, id]);
-  const details = useSelector((state) => state.details);
-  console.log(details, " soy details");
+  }, []);
+
+  let details = useSelector((state) => state.details);
+
   return (
+    
+  
     <div>
       <h1 className={Style.title}>{details.name}</h1>
 
@@ -41,4 +44,5 @@ export default function CardDetail(props) {
       </div>
     </div>
   );
+
 }

@@ -1,6 +1,7 @@
 import axios from "axios";
 require("dotenv").config();
 export const GET_RECIPE = "GET_RECIPE";
+export const CLEAN_UP_DETAILS = "CLEAN_UP_DETAILS";
 export const GET_DETAILS = "GET_DETAILS";
 export const CREATE_RECIPE = "CREATE_RECIPE";
 export const GET_DIETS = "GET_DIETS";
@@ -13,25 +14,17 @@ export const NAME_ORDER_D = "NAME_ORDER_D";
 export const DELETE_RECIPE = "DELETE_RECIPE";
 export const DELETE_RECIPE_CREATED = "DELETE_RECIPE_CREATED";
 
-
-const {REACT_APP_API_URL} = process.env;
+const { REACT_APP_API_URL } = process.env;
 
 export function get_recipe(name) {
   return async function (dispatch) {
     try {
       const { data } = await axios.get(
-        `${REACT_APP_API_URL}/recipes?name=${name}`,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-        }
+        `${REACT_APP_API_URL}/recipes?name=${name}`
       );
-      console.log(data, " soy data linea 21");
+
       return dispatch({ type: GET_RECIPE, payload: data });
     } catch (error) {
-      console.log("soy error linea 23 ", error);
       return dispatch({
         type: GET_RECIPE,
         payload: error,
@@ -43,18 +36,21 @@ export function get_Detail(id) {
   return async function (dispatch) {
     try {
       const { data } = await axios.get(`${REACT_APP_API_URL}/recipes/${id}`);
-      console.log("soy details " + data);
       return dispatch({ type: GET_DETAILS, payload: data });
     } catch (error) {
       return dispatch({ type: GET_DETAILS, payload: error });
     }
   };
 }
+export function cleanUpDetails() {
+  return async function (dispatch) {
+    return dispatch({ type: CLEAN_UP_DETAILS });
+  };
+}
 
 export function create_Recipe(object) {
   return async function (dispatch) {
     try {
-      console.log(object, " soy data create")
       const { data } = await axios.post(`${REACT_APP_API_URL}/recipes`, object);
       return dispatch({ type: CREATE_RECIPE, payload: data });
     } catch (error) {
@@ -91,7 +87,6 @@ export function showRecipesCreated() {
   return async function (dispatch) {
     try {
       const { data } = await axios.get(`${REACT_APP_API_URL}/recipesCreated`);
-      console.log(data, "soy data");
       return dispatch({ type: SHOW_RECIPES_CREATED, payload: data });
     } catch (error) {
       return dispatch({ type: SHOW_RECIPES_CREATED, payload: error });
@@ -148,9 +143,3 @@ export function ScoreOrderA() {
     }
   };
 }
-// {
-  //           headers: {
-  //             "Content-Type": "application/json",
-  //             Accept: "application/json",
-  //           },
-  //         }
