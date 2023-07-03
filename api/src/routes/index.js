@@ -1,6 +1,4 @@
 require("dotenv").config();
-const { default: axios } = require("axios");
-
 const { Router } = require("express");
 const { Op, Association } = require("sequelize");
 const { API_KEY } = process.env;
@@ -10,30 +8,23 @@ const {
 } = require("../downloadData/downloading");
 const { Recipe, DietsTypes } = require("../db");
 
-
 let RecipesLoad = 0;
 RecipesLoad === 0 && getAllApiInformation();
 
-// Importar todos los routers;
-// Ejemplo: const authRouter = require('./auth.js');
-
 const router = Router();
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
+
 router.get("/recipes/:id", async (req, res) => {
   const { id } = req.params;
-  console.log("soy id ", id);
+  if (!id) return res.status(400).send("recipe not found");
   try {
     const data = await Recipe.findOne({
       where: {
         id: { [Op.eq]: id },
       },
     });
-    if (!id) return res.status(400).send("not found");
     return res.status(200).json(data);
   } catch (error) {
-    console.log(error);
-    return res.status(400).send("error en la busqueda de detalles").json(error);
+    return res.status(400).send("serch details error").json(error);
   }
 });
 
@@ -44,16 +35,15 @@ router.get("/recipesCreated", async (req, res) => {
     },
   });
   try {
-    if (!created) return res.status(400).send(" receta no  creada");
+    if (!created) return res.status(400).send("recipe not created");
     return res.status(200).json(created);
   } catch (error) {
-    console.log(error, " soy error de mostrar recetas creadas");
     return res.status(400).json(error);
   }
 });
 
 router.get("/recipes", async (req, res) => {
-  const { name } = req.query;
+  const name = req.query.name;
   try {
     if (name) {
       const dieta = await DietsTypes.findOne({
@@ -62,24 +52,24 @@ router.get("/recipes", async (req, res) => {
         },
       });
       if (dieta) {
-        let receta = await Recipe.findAll();
-        let junction = receta.filter((el) => el.diets.includes(dieta.name));
-        receta.map(async (el) => {
+        let recipes = await Recipe.findAll();
+        let byDiets = recipes.filter((el) => el.diets.includes(dieta.name));
+        recipes.map(async (el) => {
           await el.addDietsTypes(dieta.id);
         });
-        if (junction) {
-          return res.status(200).json(junction);
+        if (byDiets) {
+          return res.status(200).json(byDiets);
         }
       } else if (name) {
-        const recetas = await Recipe.findAll({
+        const recipe = await Recipe.findAll({
           where: {
             name: { [Op.iLike]: `%${name}%` },
           },
         });
-        if (recetas.length > 0) {
-          return res.status(200).json(recetas);
+        if (recipe.length > 0) {
+          return res.status(200).json(recipe);
         } else {
-          return "try with another product!";
+          return res.status(300).send("try with another product!");
         }
       }
     } else {
@@ -87,26 +77,24 @@ router.get("/recipes", async (req, res) => {
       return res.status(200).json(info);
     }
   } catch (error) {
-    console.log(error, " soy error de recipes");
     return res.status(400).json(error);
   }
 });
-
 
 router.post("/recipes", async (req, res) => {
   const {
     name,
     summary,
-    healthScore,
     steps,
     image,
     diets,
-    servings,
-    cookingTime,
   } = req.body;
 
   if (!name || !summary || !steps || !diets)
     return res.status(404).send("Faltan enviar datos obligatorios");
+  if (!image)
+    req.body.image =
+      "https://media.istockphoto.com/id/1388791611/photo/teppanyaki-style.jpg?b=1&s=170667a&w=0&k=20&c=o4FL_2iyEO2XQiliXts-JphIFAhXg5BYlxvjxmBbh7E=";
   diets.map(async (el) => {
     const findDiet = await DietsTypes.findOrCreate({
       where: {
@@ -119,13 +107,13 @@ router.post("/recipes", async (req, res) => {
     const receta = await Recipe.create(req.body);
     return res.status(200).json(receta);
   } catch (error) {
-    console.log(error, "soy error");
     return res.status(400).json(error);
   }
 });
 
 router.get("/diets", async (req, res) => {
   let DietsTypesLoad = 0;
+
   DietsTypesLoad === 0 && allDiets();
 
   const diets = await DietsTypes.findAll({
