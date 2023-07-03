@@ -119,7 +119,7 @@ export default function Home() {
             );
           })
         ) : (
-          <h5 className={Style.loader}></h5>
+          <h5 className={Style.loader}>not found</h5>
         )}
       </div>
     </div>
