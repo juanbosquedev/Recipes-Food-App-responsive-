@@ -60,14 +60,14 @@ export default function Home() {
           setPaginado={setPaginado}
         ></Paginate>
 
-        <SearchBar setInput={setInput} id="search" name="search" className={Style.search} />
+        <SearchBar setInput={setInput} id="searcher" name="searcher" className={Style.search} />
         <span>
           <select
             Style="background-color:#790c0c; border: black solid 2px;"
             defaultValue="default"
             onChange={(e) => HandlerDietsFilter(e)}
           >
-            <option Style="padding-bottom:4px" id="dietsOrder" value="default">
+            <option Style="padding-bottom:4px" id="dietsOrder" name="dietsOrder" value="default">
               Diets Order
             </option>
             {DietsTypes &&
