@@ -1,10 +1,8 @@
 import  "./App.css";
 import React from "react";
 import Nav from "../src/components/Nav/Nav.jsx";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import {  Route, Switch } from "react-router-dom";
 import Home from "../src/components/Home/Home.jsx";
-import SearchBar from "../src/components/Search/SearchBar.jsx";
-import Card from "../src/components/Card/Card.jsx";
 import CardDetail from "../src/components/CardDetail/CardDetail.jsx";
 import Welcome from "./components/Welcome/Welcome";
 import RecipesCreated from "./components/RecipesCreated/RecipesCreated";

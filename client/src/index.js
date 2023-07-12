@@ -3,13 +3,11 @@ import ReactDOM from "react-dom";
 import "normalize.css";
 import "./index.css";
 import App from "./App";
-import dotenv from "dotenv";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import store from "../src/Reduxx/Store/store";
 import { BrowserRouter } from "react-router-dom";
 
-dotenv.config();
 
 ReactDOM.render(
   <BrowserRouter>
