@@ -30,6 +30,8 @@ export default function SearchBar({ cath }) {
         }}
       >
         <input
+          id="search"
+          name="search"
           ref={ref}
           value={state}
           type="text"

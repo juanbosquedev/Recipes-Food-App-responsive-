@@ -73,7 +73,7 @@ export default function Home() {
             {DietsTypes &&
               DietsTypes.map((el) => {
                 return (
-                  <option key={el.id} value={el.name}>
+                  <option key={el.id} name={el.name} value={el.name}>
                     {el.name}
                   </option>
                 );
