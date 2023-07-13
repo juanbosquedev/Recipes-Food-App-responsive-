@@ -66,8 +66,10 @@ export default function Home() {
             Style="background-color:#790c0c; border: black solid 2px;"
             defaultValue="default"
             onChange={(e) => HandlerDietsFilter(e)}
+            id="dietSelector"
+            name="dietsType"
           >
-            <option Style="padding-bottom:4px" id="dietsOrder" name="dietsOrder" value="default">
+            <option Style="padding-bottom:4px" id="dietsOrderer" name="dietsOrder" value="default">
               Diets Order
             </option>
             {DietsTypes &&
