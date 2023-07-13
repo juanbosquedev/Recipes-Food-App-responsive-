@@ -20,17 +20,19 @@ export default function SearchBar({ cath }) {
     cath(state);
     setState("");
   }
-
+// is there anything wrong with this form?
   return (
     <div>
       <form
+        id="formSearch"
+        name="form-search"
         onSubmit={(e) => {
           e.preventDefault();
           handleSubmit(e);
         }}
       >
         <input
-          id="search"
+          id="searched"
           name="search"
           ref={ref}
           value={state}
