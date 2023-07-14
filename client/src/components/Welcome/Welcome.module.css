@@ -4,10 +4,11 @@
   background-image: url("../../Images/bg-welcome.png");
   background-size: cover;
   width: 100vw;
-  height: 730px;
+  height: 100dvh;
   text-decoration: none;
   max-height: 100%;
   justify-items: center;
+  align-items: center;
 }
 
 .lbl {
@@ -40,7 +41,7 @@
   border-radius: 90px;
   text-decoration: none;
   background-color: black;
-  margin-top: 1rem; 
+  margin-top: 1rem;
   justify-content: center;
   color: orange;
   font-family: "Times New Roman", Times, serif;
@@ -53,7 +54,7 @@
 
 @media only screen and (max-width: 600px) {
   .Welcome {
-    height:100vh;
+    height: 100vh;
   }
   .lbl {
     height: fit-content;
@@ -71,4 +72,3 @@
     align-content: center;
   }
 }
-
