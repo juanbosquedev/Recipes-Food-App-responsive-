@@ -1,9 +1,8 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { get_Diets, get_recipe } from "../../Reduxx/Actions/actions";
+import { useDispatch } from "react-redux";
+import { get_recipe } from "../../Reduxx/Actions/actions";
 import { useRef, useState } from "react";
 import Style from "./Search.module.css";
-import { useEffect } from "react";
 
 export default function SearchBar({ cath }) {
   const dispatch = useDispatch();
@@ -20,7 +19,6 @@ export default function SearchBar({ cath }) {
     cath(state);
     setState("");
   }
-// is there anything wrong with this form?
   return (
     <div>
       <form
