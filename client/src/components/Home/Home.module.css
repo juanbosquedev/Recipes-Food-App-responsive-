@@ -37,10 +37,10 @@
   min-height: 30vw;
 }
 .main {
-  display: flex;
+  display: grid;
   flex-direction: row;
   width: 100%;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(1rem, 1fr));
   padding-top: 8px;
   align-items: flex-end;
   justify-content: space-evenly;

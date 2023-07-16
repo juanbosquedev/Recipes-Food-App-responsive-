@@ -6,7 +6,6 @@ import Style from "./Paginate.module.css";
 
 export default function Paginate({ setPaginado }) {
   const recipes = useSelector((state) => state.recipes);
-  const dispatch = useDispatch();
 
   let quantity = 9;
   const total = recipes.length;
