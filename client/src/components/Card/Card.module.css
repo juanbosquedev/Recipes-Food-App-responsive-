@@ -34,7 +34,6 @@
   text-decoration: none;
 }
 .close {
-  margin: 0;
   position: absolute;
   top: 12px;
   left: 90%;
@@ -55,8 +54,8 @@
   display: grid;
 
   align-items: center;
-
-  grid-template: 30px 30px 30px/ 80px 220px;
+grid-template:repeat(auto-fill, minmax(1rem, 1fr));
+  /* grid-template: 30px 30px 30px/ 80px 220px; */
 }
 
 section > p {

@@ -25,9 +25,8 @@ export default function CardDetail(props) {
         <div className={Style.contenedor}>
           <img className={Style.img} src={details.image} alt="" />
           <span>
-            <p>Diets Type: {details.diets}</p>
-
-            <p>Health Score: {details.healthScore}</p>
+            <p>Diets Type: {details.diets}
+            <br/>Health Score: {details.healthScore}</p>
           </span>
         </div>
 
