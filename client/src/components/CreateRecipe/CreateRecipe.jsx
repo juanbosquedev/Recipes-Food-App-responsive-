@@ -103,7 +103,7 @@ export default function CreateRecipe() {
       className={Style.background}
     >
       <div className={Style.short}>
-        <label>Name: </label>
+        <label for="name">Name: </label>
         <input
           id="nameId"
           name="name"
@@ -117,7 +117,7 @@ export default function CreateRecipe() {
 
         {errors.name && <h6 Style="color:white">{errors.name}</h6>}
 
-        <label>Health Score: </label>
+        <label for="healthScore">Health Score: </label>
         <input
           id="hScoreId"
           className={Style.placeHolder}
@@ -129,7 +129,7 @@ export default function CreateRecipe() {
           }}
         />
 
-        <label>Imagen: </label>
+        <label for="image">Imagen: </label>
         <input
           className={Style.placeHolder}
           id="imageId"
@@ -141,7 +141,7 @@ export default function CreateRecipe() {
           }}
         />
 
-        <label>Diet Type: </label>
+        <label for="firstSelect">Diet Type: </label>
       
         <select
           id="firstSelect"
@@ -166,7 +166,7 @@ export default function CreateRecipe() {
         </select>
         {errors.diets && <h6 Style="color:white">{errors.diets}</h6>}
 
-        <label htmlFor="servings">Servings: </label>
+        <label For="servings">Servings: </label>
         <input
           className={Style.placeHolder}
           name="servings"
@@ -179,7 +179,7 @@ export default function CreateRecipe() {
         />
         {errors.servings && <h6 Style="color:white">{errors.servings}</h6>}
 
-        <label>Cooking Time: </label>
+        <label for="cookingTime">Cooking Time: </label>
         <input
           className={Style.placeHolder}
           name="cookingTime"
@@ -197,7 +197,7 @@ export default function CreateRecipe() {
       </div>
    
       <div className={Style.long}>
-        <label>Summary: </label>
+        <label for="summary">Summary: </label>
         <textarea
           className={Style.placeHolder}
           name="summary"
@@ -210,7 +210,7 @@ export default function CreateRecipe() {
         />
         {errors.summary && <h6 Style="color:white">{errors.summary}</h6>}
 
-        <label Style="padding-top:1rem">Step By Step: </label>
+        <label for="steps" Style="padding-top:1rem">Step By Step: </label>
         <textarea
           className={Style.placeHolder}
           id="stepsId"
