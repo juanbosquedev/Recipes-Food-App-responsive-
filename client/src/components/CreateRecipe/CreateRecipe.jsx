@@ -103,10 +103,10 @@ export default function CreateRecipe() {
       className={Style.background}
     >
       <div className={Style.short}>
-        <label for="name">Name: </label>
+        <label htmlFor="nameId">Name: </label>
         <input
-          id="nameId"
           name="name"
+          id="nameId"
           className={Style.placeHolder}
           type="text"
           value={state.name}
@@ -117,11 +117,11 @@ export default function CreateRecipe() {
 
         {errors.name && <h6 Style="color:white">{errors.name}</h6>}
 
-        <label for="healthScore">Health Score: </label>
+        <label htmlFor="hScoreId">Health Score: </label>
         <input
+          name="healthScore"
           id="hScoreId"
           className={Style.placeHolder}
-          name="healthScore"
           type="number"
           value={state.healthScore}
           onChange={(e) => {
@@ -129,11 +129,11 @@ export default function CreateRecipe() {
           }}
         />
 
-        <label for="image">Imagen: </label>
+        <label htmlFor="imageId">Imagen: </label>
         <input
           className={Style.placeHolder}
-          id="imageId"
           name="image"
+          id="imageId"
           type="text"
           value={state.image}
           onChange={(e) => {
@@ -141,11 +141,11 @@ export default function CreateRecipe() {
           }}
         />
 
-        <label for="firstSelect">Diet Type: </label>
+        <label htmlFor="firstSelect">Diet Type: </label>
       
         <select
+          name="firstSelected"
           id="firstSelect"
-          name="firstSelect"
           className={Style.placeHolderDiet}
           defaultValue="default"
           onChange={(e) => handleChangeDiets(e)}
@@ -166,10 +166,10 @@ export default function CreateRecipe() {
         </select>
         {errors.diets && <h6 Style="color:white">{errors.diets}</h6>}
 
-        <label For="servings">Servings: </label>
+        <label htmlFor="servingsId">Servings: </label>
         <input
-          className={Style.placeHolder}
           name="servings"
+          className={Style.placeHolder}
           id="servingsId"
           type="number"
           value={state.servings}
@@ -179,7 +179,7 @@ export default function CreateRecipe() {
         />
         {errors.servings && <h6 Style="color:white">{errors.servings}</h6>}
 
-        <label for="cookingTime">Cooking Time: </label>
+        <label htmlFor="cookingTimeId">Cooking Time: </label>
         <input
           className={Style.placeHolder}
           name="cookingTime"
@@ -197,11 +197,11 @@ export default function CreateRecipe() {
       </div>
    
       <div className={Style.long}>
-        <label for="summary">Summary: </label>
+        <label htmlFor="summaryId">Summary: </label>
         <textarea
           className={Style.placeHolder}
           name="summary"
-          id="summuryId"
+          id="summaryId"
           type="text"
           value={state.summary}
           onChange={(e) => {
@@ -210,11 +210,11 @@ export default function CreateRecipe() {
         />
         {errors.summary && <h6 Style="color:white">{errors.summary}</h6>}
 
-        <label for="steps" Style="padding-top:1rem">Step By Step: </label>
+        <label htmlFor="stepsId" Style="padding-top:1rem">Step By Step: </label>
         <textarea
           className={Style.placeHolder}
-          id="stepsId"
           name="steps"
+          id="stepsId"
           type="text"
           value={state.steps}
           onChange={(e) => {
