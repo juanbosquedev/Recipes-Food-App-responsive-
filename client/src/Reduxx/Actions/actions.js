@@ -19,12 +19,9 @@ const { REACT_APP_API_URL } = process.env;
 export function get_recipe(name) {
   return async function (dispatch) {
     try {
-      
       const { data } = await axios.get(
         `${REACT_APP_API_URL}/recipes?name=${name}`
-      
       );
-    
 
       return dispatch({ type: GET_RECIPE, payload: data });
     } catch (error) {
@@ -41,7 +38,10 @@ export function get_Detail(id) {
       const { data } = await axios.get(`${REACT_APP_API_URL}/recipes/${id}`);
       return dispatch({ type: GET_DETAILS, payload: data });
     } catch (error) {
-      return dispatch({ type: GET_DETAILS, payload: error.response.data.error });
+      return dispatch({
+        type: GET_DETAILS,
+        payload: error.response.data.error,
+      });
     }
   };
 }
@@ -57,7 +57,10 @@ export function create_Recipe(object) {
       const { data } = await axios.post(`${REACT_APP_API_URL}/recipes`, object);
       return dispatch({ type: CREATE_RECIPE, payload: data });
     } catch (error) {
-      return dispatch({ type: CREATE_RECIPE, payload: error.response.data.error, });
+      return dispatch({
+        type: CREATE_RECIPE,
+        payload: error.response.data.error,
+      });
     }
   };
 }
@@ -67,7 +70,7 @@ export function get_Diets() {
       const { data } = await axios.get(`${REACT_APP_API_URL}/diets`);
       return dispatch({ type: GET_DIETS, payload: data });
     } catch (error) {
-      return dispatch({ type: GET_DIETS, payload: error.response.data.error,});
+      return dispatch({ type: GET_DIETS, payload: error.response.data.error });
     }
   };
 }
@@ -92,7 +95,10 @@ export function showRecipesCreated() {
       const { data } = await axios.get(`${REACT_APP_API_URL}/recipesCreated`);
       return dispatch({ type: SHOW_RECIPES_CREATED, payload: data });
     } catch (error) {
-      return dispatch({ type: SHOW_RECIPES_CREATED, payload: error.response.data.error, });
+      return dispatch({
+        type: SHOW_RECIPES_CREATED,
+        payload: error.response.data.error,
+      });
     }
   };
 }
@@ -102,7 +108,10 @@ export function dietsFilter(diet) {
     try {
       return dispatch({ type: DIETS_FILTER, payload: diet });
     } catch (error) {
-      return dispatch({ type: DIETS_FILTER, payload: error.response.data.error, });
+      return dispatch({
+        type: DIETS_FILTER,
+        payload: error.response.data.error,
+      });
     }
   };
 }
@@ -112,7 +121,10 @@ export function NameOrderA() {
     try {
       return dispatch({ type: NAME_ORDER_A });
     } catch (error) {
-      return dispatch({ type: NAME_ORDER_A, payload: error.response.data.error, });
+      return dispatch({
+        type: NAME_ORDER_A,
+        payload: error.response.data.error,
+      });
     }
   };
 }
@@ -122,7 +134,10 @@ export function NameOrderD() {
     try {
       return dispatch({ type: NAME_ORDER_D });
     } catch (error) {
-      return dispatch({ type: NAME_ORDER_D, payload: error.response.data.error, });
+      return dispatch({
+        type: NAME_ORDER_D,
+        payload: error.response.data.error,
+      });
     }
   };
 }
@@ -132,7 +147,10 @@ export function ScoreOrderD() {
     try {
       return dispatch({ type: SCORE_ORDER_D });
     } catch (error) {
-      return dispatch({ type: SCORE_ORDER_D, payload: error.response.data.error, });
+      return dispatch({
+        type: SCORE_ORDER_D,
+        payload: error.response.data.error,
+      });
     }
   };
 }
@@ -142,7 +160,10 @@ export function ScoreOrderA() {
     try {
       return dispatch({ type: SCORE_ORDER_A });
     } catch (error) {
-      return dispatch({ type: SCORE_ORDER_A, payload: error.response.data.error, });
+      return dispatch({
+        type: SCORE_ORDER_A,
+        payload: error.response.data.error,
+      });
     }
   };
 }

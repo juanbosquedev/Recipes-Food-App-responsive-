@@ -25,11 +25,15 @@ export default function Home() {
   const DietsTypes = useSelector((state) => state.diets);
   const dispatch = useDispatch();
   const [paginado, setPaginado] = useState();
-  useEffect(() => dispatch(cleanUpDetails()), []);
+  // useEffect(() => dispatch(cleanUpDetails()), []);
 
- if (recipes.length === 0) {
-    dispatch(get_recipe(input));
-    dispatch(get_Diets())}
+  useEffect(() => {
+    if (recipes.length === 0 ) {
+      dispatch(get_recipe(input));
+      dispatch(get_Diets());
+    }
+  }, [dispatch, recipes.length]);
+
 
   function HandlerDietsFilter(e) {
     dispatch(dietsFilter(e.target.value));
