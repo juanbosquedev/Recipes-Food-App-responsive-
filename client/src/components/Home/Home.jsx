@@ -21,20 +21,19 @@ import { cleanUpDetails } from "../../Reduxx/Actions/actions";
 
 export default function Home() {
   const recipes = useSelector((state) => state.recipes);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(" ");
   const DietsTypes = useSelector((state) => state.diets);
   const dispatch = useDispatch();
   const [paginado, setPaginado] = useState();
-  
+
   useEffect(() => {
-    if (recipes.length === 0 ) {
+    if (recipes.length === 0) {
       dispatch(get_recipe(input));
       dispatch(get_Diets());
       // return ()=> dispatch(cleanUpDetails())
     }
   }, [dispatch, recipes.length]);
   useEffect(() => dispatch(cleanUpDetails()), [dispatch]);
-
 
   function HandlerDietsFilter(e) {
     dispatch(dietsFilter(e.target.value));
@@ -65,7 +64,12 @@ export default function Home() {
           setPaginado={setPaginado}
         ></Paginate>
 
-        <SearchBar setInput={setInput} id="searcher" name="searcher" className={Style.search} />
+        <SearchBar
+          setInput={setInput}
+          id="searcher"
+          name="searcher"
+          className={Style.search}
+        />
         <span>
           <select
             Style="background-color:#790c0c; border: black solid 2px;"
@@ -74,7 +78,12 @@ export default function Home() {
             id="dietSelector"
             name="dietsType"
           >
-            <option Style="padding-bottom:4px" id="dietsOrderer" name="dietsOrder" value="default">
+            <option
+              Style="padding-bottom:4px"
+              id="dietsOrderer"
+              name="dietsOrder"
+              value="default"
+            >
               Diets Order
             </option>
             {DietsTypes &&
