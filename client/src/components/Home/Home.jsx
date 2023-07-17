@@ -33,7 +33,7 @@ export default function Home() {
       // return ()=> dispatch(cleanUpDetails())
     }
   }, [dispatch, recipes.length]);
-  useEffect(() => dispatch(cleanUpDetails()), []);
+  useEffect(() => dispatch(cleanUpDetails()), [dispatch]);
 
 
   function HandlerDietsFilter(e) {
