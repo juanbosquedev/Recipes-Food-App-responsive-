@@ -23,7 +23,7 @@ export function get_recipe(name) {
         `${REACT_APP_API_URL}/recipes?name=${name}`
       
       );
-      if (data){alert(data)}
+      if (data){console.log(data)}
 
       return dispatch({ type: GET_RECIPE, payload: data });
     } catch (error) {
