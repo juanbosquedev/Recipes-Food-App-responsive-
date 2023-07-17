@@ -31,6 +31,7 @@ export default function Home() {
     if (recipes.length === 0 ) {
       dispatch(get_recipe(input));
       dispatch(get_Diets());
+      return ()=> dispatch(cleanUpDetails())
     }
   }, [dispatch, recipes.length]);
 
