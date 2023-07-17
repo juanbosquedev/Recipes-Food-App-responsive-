@@ -21,6 +21,7 @@ import { cleanUpDetails } from "../../Reduxx/Actions/actions";
 
 export default function Home() {
   const recipes = useSelector((state) => state.recipes);
+  const details = useSelector((state) => state.details);
   const [input, setInput] = useState(" ");
   const DietsTypes = useSelector((state) => state.diets);
   const dispatch = useDispatch();
@@ -30,10 +31,14 @@ export default function Home() {
     if (recipes.length === 0) {
       dispatch(get_recipe(input));
       dispatch(get_Diets());
-      // return ()=> dispatch(cleanUpDetails())
     }
   }, [dispatch, recipes.length]);
-  useEffect(() => dispatch(cleanUpDetails()), [dispatch]);
+
+  useEffect(() => {
+    if (details !== 0) {
+      dispatch(cleanUpDetails());
+    }
+  }, [dispatch, details]);
 
   function HandlerDietsFilter(e) {
     dispatch(dietsFilter(e.target.value));
