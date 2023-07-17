@@ -105,6 +105,7 @@ export default function CreateRecipe() {
       <div className={Style.short}>
         <label>Name: </label>
         <input
+          id="nameId"
           name="name"
           className={Style.placeHolder}
           type="text"
@@ -118,6 +119,7 @@ export default function CreateRecipe() {
 
         <label>Health Score: </label>
         <input
+          id="hScoreId"
           className={Style.placeHolder}
           name="healthScore"
           type="number"
@@ -130,6 +132,7 @@ export default function CreateRecipe() {
         <label>Imagen: </label>
         <input
           className={Style.placeHolder}
+          id="imageId"
           name="image"
           type="text"
           value={state.image}
@@ -142,6 +145,7 @@ export default function CreateRecipe() {
       
         <select
           id="firstSelect"
+          name="firstSelect"
           className={Style.placeHolderDiet}
           defaultValue="default"
           onChange={(e) => handleChangeDiets(e)}
@@ -166,6 +170,7 @@ export default function CreateRecipe() {
         <input
           className={Style.placeHolder}
           name="servings"
+          id="servingsId"
           type="number"
           value={state.servings}
           onChange={(e) => {
@@ -178,6 +183,7 @@ export default function CreateRecipe() {
         <input
           className={Style.placeHolder}
           name="cookingTime"
+          id="cookingTimeId"
           type="number"
           value={state.cookingTime}
           onChange={(e) => {
@@ -195,7 +201,7 @@ export default function CreateRecipe() {
         <textarea
           className={Style.placeHolder}
           name="summary"
-          id="long"
+          id="summuryId"
           type="text"
           value={state.summary}
           onChange={(e) => {
@@ -207,7 +213,7 @@ export default function CreateRecipe() {
         <label Style="padding-top:1rem">Step By Step: </label>
         <textarea
           className={Style.placeHolder}
-          id="long"
+          id="stepsId"
           name="steps"
           type="text"
           value={state.steps}
