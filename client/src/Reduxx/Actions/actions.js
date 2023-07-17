@@ -21,7 +21,9 @@ export function get_recipe(name) {
     try {
       const { data } = await axios.get(
         `${REACT_APP_API_URL}/recipes?name=${name}`
+      
       );
+      if (data){alert(data)}
 
       return dispatch({ type: GET_RECIPE, payload: data });
     } catch (error) {
