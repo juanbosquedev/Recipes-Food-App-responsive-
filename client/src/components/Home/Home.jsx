@@ -35,7 +35,7 @@ export default function Home() {
   }, [dispatch, recipes.length]);
 
   useEffect(() => {
-    if (details !== 0) {
+    if (details.length !== 0) {
       dispatch(cleanUpDetails());
     }
   }, [dispatch, details]);
