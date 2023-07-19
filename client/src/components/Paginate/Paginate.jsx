@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { get_recipe } from "../../Reduxx/Actions/actions";
 import Style from "./Paginate.module.css";
 

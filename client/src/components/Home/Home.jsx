@@ -32,7 +32,7 @@ export default function Home() {
       dispatch(get_recipe(input));
       dispatch(get_Diets());
     }
-  }, [dispatch, recipes.length]);
+  }, [dispatch, input, recipes.length]);
 
   useEffect(() => {
     if (details.length !== 0) {
