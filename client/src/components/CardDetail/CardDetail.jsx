@@ -11,7 +11,7 @@ export default function CardDetail(props) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(get_Detail(id));
-  }, []);
+  }, [dispatch, id]);
 
   let details = useSelector((state) => state.details);
 

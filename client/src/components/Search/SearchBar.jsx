@@ -4,19 +4,19 @@ import { get_recipe } from "../../Reduxx/Actions/actions";
 import { useRef, useState } from "react";
 import Style from "./Search.module.css";
 
-export default function SearchBar({ cath }) {
+export default function SearchBar({ setInput }) {
   const dispatch = useDispatch();
-  const ref = useRef(null);
+  const ref = useRef();
   const [state, setState] = useState("");
 
   function handleChanges(e) {
     const inputValue = ref.current.value;
-    e.preventDefault();
     setState(inputValue);
   }
   function handleSubmit(e) {
+    e.preventDefault(e);
     dispatch(get_recipe(state));
-    cath(state);
+    setInput(state);
     setState("");
   }
   return (

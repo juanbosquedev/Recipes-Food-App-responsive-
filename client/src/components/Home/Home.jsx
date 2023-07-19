@@ -22,7 +22,7 @@ import { cleanUpDetails } from "../../Reduxx/Actions/actions";
 export default function Home() {
   const recipes = useSelector((state) => state.recipes);
   const details = useSelector((state) => state.details);
-  const [input, setInput] = useState(" ");
+  const [input, setInput] = useState("");
   const DietsTypes = useSelector((state) => state.diets);
   const dispatch = useDispatch();
   const [paginado, setPaginado] = useState();
