@@ -39,7 +39,7 @@ export default function SearchBar({ cath }) {
           onChange={(e) => handleChanges(e)}
           className={Style.search}
         />
-        <input className={Style.button} type="submit" value="Search" />
+        <input className={Style.buttonSearch} type="submit" value="Search" />
       </form>
     </div>
   );

@@ -11,40 +11,38 @@
   height: 120px;
   -webkit-animation: spin 4s linear infinite;
   animation: spin 1s linear infinite;
-  
 }
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 .cards {
-  margin: 3rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: fit-content;
-  min-height: 30vw;
+  margin: 3rem 2.5rem;
+  grid-template-columns: repeat(3, minmax(1rem, 1fr));
+  grid-template-rows: repeat(3, minmax(1rem, 1fr));
+  gap: 1rem;
 }
 .main {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  /* grid-template-columns: repeat(auto-fill, minmax(1rem, 1fr)); */
-  padding-top: 8px;
-  align-items: flex-end;
-  justify-content: space-evenly;
-  margin-right: 1px;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(3, minmax(1rem, 1fr));
+  width: 100vw;
+  margin-top: 1rem;
 }
 select {
   height: 23px;
@@ -82,14 +80,22 @@ select > option {
   animation: spin 2s linear infinite;
 }
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 @media only screen and (max-width: 600px) {
   .cards {

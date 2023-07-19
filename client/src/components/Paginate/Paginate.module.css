@@ -1,16 +1,14 @@
 .body {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  height: 30px;
+
+  height: 1.8rem;
 }
-.body button {
-  border-radius: 10px;
+ button {
+  border-radius: .5rem;
   background-color: #790c0c;
   margin-right: 4px;
   color: white;
-  border: black solid 2px bold;
-  transition: 0.25s ease;
+  border: black solid .2rem;
+  transition:all 3s ease-in;
   cursor: pointer;
 }
 .body button :hover {

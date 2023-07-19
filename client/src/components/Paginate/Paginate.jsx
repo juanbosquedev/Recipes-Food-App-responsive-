@@ -25,7 +25,7 @@ export default function Paginate({ setPaginado }) {
   return (
     <div className={Style.body}>
       <button
-        id={Style.btn}
+        id="btnBegin"
         className={`button ${current === 1}`}
         onClick={() => changePage(1)}
       >
@@ -33,7 +33,7 @@ export default function Paginate({ setPaginado }) {
       </button>
 
       <button
-        id="btn"
+        id="btnLess"
         hidden={current === 1 && true}
         className={`button ${current === 1}`}
         onClick={() => changePage(current - 1)}
@@ -42,6 +42,7 @@ export default function Paginate({ setPaginado }) {
       </button>
       <button>{current}</button>
       <button
+        id="btnPlus"
         hidden={current === paginate && true}
         className={`button ${current === total}`}
         onClick={() => changePage(current + 1)}
@@ -50,7 +51,7 @@ export default function Paginate({ setPaginado }) {
       </button>
 
       <button
-        id={Style.btn}
+        id="btnEnd"
         className={`button ${current === total}`}
         onClick={() => changePage(paginate)}
       >

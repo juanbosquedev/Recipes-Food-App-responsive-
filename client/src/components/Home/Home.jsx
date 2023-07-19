@@ -70,9 +70,9 @@ export default function Home() {
         ></Paginate>
 
         <SearchBar
-          setInput={setInput}
           id="searcher"
           name="searcher"
+          setInput={setInput}
           className={Style.search}
         />
         <span>

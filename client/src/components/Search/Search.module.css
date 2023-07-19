@@ -1,22 +1,16 @@
-.button {
-  display: flex;
-  margin-right: 1rem;
+.buttonSearch {
+  border-radius: .5rem;
   background-color: #790c0c;
-  border-radius: 15rem;
+  margin-right: 4px;
   color: white;
-  height: 30px;
-  font-size: 14px;
-  min-width: 23px;
-  cursor: pointer;
-  font-family: "Ubuntu", sans-serif;
-  transition: 0.25s ease;
+  border: black solid .2rem;
+  transition:all 3s ease-in;
   cursor: pointer;
 }
-.button::placeholder {
-  color: white;
-}
+
 ::placeholder {
   color: rgba(255, 255, 255, 0.37);
+  padding-left: 1rem;
 }
 
 .search {
