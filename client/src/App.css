@@ -3,7 +3,7 @@
   box-sizing: border-box;
   margin:0px;
   padding: 0px;
-  /* font-size: 14px; */
+  font-size: clamp(15px, 5vw, 17px);
 }
 
 .App {
@@ -16,10 +16,6 @@ input {
 
 body {
   background-image: url("./Images/bg-food.png");
-  /* background-size: 100% 100%;
-  background-repeat: no-repeat;
-  align-content: center;
-  height: 100vh; */
   background-attachment: fixed, scroll;
   background-repeat: no-repeat, repeat-y;
   background-size: cover;
