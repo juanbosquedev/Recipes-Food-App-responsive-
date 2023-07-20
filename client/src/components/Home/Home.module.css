@@ -110,10 +110,8 @@ select > option {
     width: 100%;
   }
   .main {
-    display: flex;
-    justify-content: flex-end;
-
-    width: 90%;
+    grid-template-columns: repeat(2, minmax(1rem, 1fr));
+    width: 100%;
   }
 
   .main > span {
