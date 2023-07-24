@@ -3,6 +3,8 @@
   justify-content: center;
 }
 .loader {
+  position: relative;
+  margin: 0 auto;
   border: 16px solid orangered;
   border-top: 16px solid #790c0c;
   border-bottom: 16px solid #790c0c;
@@ -35,7 +37,7 @@
   margin: 3rem 2.5rem;
   grid-template-columns: repeat(3, minmax(1rem, 1fr));
   grid-template-rows: repeat(3, minmax(1rem, 1fr));
-  gap: 1rem;
+  gap: 2.5rem;
 }
 .main {
   display: grid;

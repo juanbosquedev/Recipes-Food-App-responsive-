@@ -23,7 +23,7 @@ export default function Card({
       >
         X
       </button>
-      <Link Style="text-decoration:none" to={`/CardDetail/${id}`}>
+      <Link Styletyle={"text-decoration:none"} to={`/CardDetail/${id}`}>
         <h4 className={Style.title}>{name}</h4>
       </Link>
       <div className={Style.image}>
