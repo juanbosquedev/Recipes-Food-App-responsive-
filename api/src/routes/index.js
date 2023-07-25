@@ -36,7 +36,7 @@ router.get("/recipesCreated", async (req, res) => {
   });
   try {
     if (!created) return res.status(400).send("recipe not created");
-    if (!created) return res.status(400).send(" recipe not created");
+    if (!created) return res.status(400).send("recipe not created");
     return res.status(200).json(created);
   } catch (error) {
     return res.status(400).json(error);
