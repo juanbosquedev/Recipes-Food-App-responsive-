@@ -115,7 +115,7 @@ export default function CreateRecipe() {
           }}
         />
 
-        {errors.name && <h6 Style="color:white">{errors.name}</h6>}
+        {errors.name && <h6 Style={"color:white"}>{errors.name}</h6>}
 
         <label htmlFor="hScoreId">Health Score: </label>
         <input
@@ -164,7 +164,7 @@ export default function CreateRecipe() {
               );
             })}
         </select>
-        {errors.diets && <h6 Style="color:white">{errors.diets}</h6>}
+        {errors.diets && <h6 Style={"color:white"}>{errors.diets}</h6>}
 
         <label htmlFor="servingsId">Servings: </label>
         <input
@@ -208,7 +208,7 @@ export default function CreateRecipe() {
             handleChange(e);
           }}
         />
-        {errors.summary && <h6 Style="color:white">{errors.summary}</h6>}
+        {errors.summary && <h6 Style={"color:white"}>{errors.summary}</h6>}
 
         <label htmlFor="stepsId" Style="padding-top:1rem">Step By Step: </label>
         <textarea
@@ -222,7 +222,7 @@ export default function CreateRecipe() {
           }}
         />
       </div>
-      {errors.steps && <h6 Style="color:white">{errors.steps}</h6>}
+      {errors.steps && <h6 Style={"color:white"}>{errors.steps}</h6>}
       <div>
         <button className={Style.button} type="submit">
           Create Recipe

@@ -72,8 +72,6 @@ h6 {
 }
 .placeHolder {
   position: relative;
-  /* display: flex;
-    justify-content: center;  */
   color: white;
   background-color: transparent;
   backdrop-filter: blur(4px);
@@ -82,8 +80,6 @@ h6 {
   width: 150px;
   margin: 2px;
   height: 20px;
-
-  /* justify-items: space-between; */
   align-content: space-between;
   padding: 1px;
 }
@@ -103,39 +99,31 @@ h6 {
 .placeHolderDiet {
   display: grid;
   color: white;
-
   background-color: transparent;
   backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 2px solid #790c0c;
-
   width: 160px;
   max-height: 25px;
   font-size: 12px;
   align-content: center;
 }
 .button {
-  /* display: flex; */
   position: relative;
   left: 13rem;
   color: white;
-
   background-color: transparent;
-
   backdrop-filter: filter(14px);
   border-radius: 4px;
   width: 340px;
   height: 30px;
   align-content: center;
   padding: 2px;
-
-  background-color: transparent;
+  transition: background-color 1s ease-in;
 }
 .button:hover {
   background-color: orangered;
-  /* color: green; */
   color: black;
-  border: #790c0c solid 1px;
 }
 @media only screen and (max-width: 600px) {
   .background {

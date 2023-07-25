@@ -114,7 +114,7 @@ export default function Home() {
           </select>
 
           <select
-            Style="background-color:#790c0c; border: black solid 2px;"
+            Style={"background-color:#790c0c; border: black solid 2px;"}
             defaultValue="default"
             id="dietsByScore"
             name="score"
