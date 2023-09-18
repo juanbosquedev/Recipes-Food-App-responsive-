@@ -1,0 +1,93 @@
+.card {
+  position: relative;
+  scale: 1;
+  display: grid;
+  grid-template-rows: auto;
+  box-shadow: 3px 3px #790c0c;
+  height: 20rem;
+  padding: 1.5rem;
+  padding-bottom: 1rem;
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  transition: scale 1s;
+}
+
+.card:hover {
+  scale: 1.1;
+}
+.title {
+
+  margin-bottom: 1rem;
+  color: white;
+  text-decoration: none;
+}
+.title:hover {
+  color: orangered;
+}
+
+.Link {
+  text-decoration: none;
+}
+.close {
+  position: absolute;
+  top: 12px;
+  left: 90%;
+  color: red;
+  border-radius: 100px;
+  border: 40px solid blueviolet;
+  background-color: rgb(97, 96, 96);
+
+  border: 1cm;
+}
+.close:hover {
+  background-color: black;
+  color: red;
+}
+
+.section {
+  height: 90px;
+  display: grid;
+
+  align-items: center;
+grid-template:repeat(auto-fill, minmax(1rem, 1fr));
+}
+
+section > p {
+  display: flex;
+  align-items: flex-start;
+  font-size: 11px;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+}
+section > span {
+  display: flex;
+  align-items: left;
+  font-size: 11px;
+  color: white;
+  font-weight: bold;
+}
+
+.image {
+  margin-bottom: 1rem;
+  display: block;
+  margin: auto;
+}
+.image > img {
+  width: 100%;
+  height: 150px;
+  max-height: 200px;
+
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    display: grid;
+    width: 80%;
+  }
+  .title {
+    height: 20px;
+  }
+
+}

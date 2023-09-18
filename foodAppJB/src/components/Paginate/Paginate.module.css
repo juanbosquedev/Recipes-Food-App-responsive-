@@ -1,0 +1,26 @@
+.body {
+margin-left: 2rem;
+  height: 1rem;
+}
+ .body button {
+  border-radius: .5rem;
+  background-color: #790c0c;
+  margin-right: 4px;
+  color: white;
+  border: black solid .2rem;
+  transition:all 3s ease-in;
+  cursor: pointer;
+}
+.body button :hover {
+  background-color: gray;
+}
+
+@media only screen and (max-width: 600px) {
+  .body {
+    height: 23px;
+  }
+  #btn{
+     
+    visibility: hidden;
+  }
+}

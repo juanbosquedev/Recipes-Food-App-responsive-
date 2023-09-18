@@ -1,0 +1,127 @@
+.home {
+  display: grid;
+  justify-content: center;
+}
+.loade {
+  position: relative;
+  margin: 0 auto;
+
+}
+.loader {
+  position: relative;
+  margin: 0 auto;
+  border: 16px solid orangered;
+  border-top: 16px solid #790c0c;
+  border-bottom: 16px solid #790c0c;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 4s linear infinite;
+  animation: spin 1s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.cards {
+  display: grid;
+  margin: 3rem 2.5rem;
+  grid-template-columns: repeat(3, minmax(1rem, 1fr));
+  grid-template-rows: repeat(3, minmax(1rem, 1fr));
+  gap: 2.5rem;
+}
+.main {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(3, minmax(1rem, 1fr));
+  width: 100vw;
+  margin-top: 1rem;
+}
+select {
+  height: 23px;
+  font-stretch: normal;
+}
+
+.paginate button {
+  border-radius: 10px;
+  height: 23px;
+  background-color: #790c0c;
+}
+select {
+  height: 30px;
+  border-radius: 10px;
+  text-align: center;
+  text-size-adjust: initial;
+  background-color: #790c0c;
+  color: white;
+  background-color: transparent;
+  backdrop-filter: blur(8px);
+  margin-right: 8px;
+}
+
+select > option {
+  padding-bottom: 3px;
+}
+.loader {
+  border: 16px solid orangered;
+  border-radius: 50%;
+  border-top: 16px solid #790c0c;
+  border-bottom: 16px solid #790c0c;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    align-items: center;
+    width: 80%;
+  }
+  .home {
+    display: grid;
+    width: 100%;
+  }
+  .main {
+    grid-template-columns: repeat(2, minmax(1rem, 1fr));
+    width: 100%;
+  }
+
+  .main > span {
+    display: none;
+  }
+}

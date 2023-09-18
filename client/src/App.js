@@ -1,7 +1,7 @@
 import  "./App.css";
+import {  Route, Switch } from "react-router-dom";
 import React from "react";
 import Nav from "../src/components/Nav/Nav.jsx";
-import {  Route, Switch } from "react-router-dom";
 import Home from "../src/components/Home/Home.jsx";
 import CardDetail from "../src/components/CardDetail/CardDetail.jsx";
 import Welcome from "./components/Welcome/Welcome";
