@@ -6,7 +6,7 @@ font-size: clamp(15px, 5vw, 17px);
 }
 
 body {
-  background-image: url("./Images/bg-food.png");
+  background-image: url("./components/images/bg-food.png");
   background-attachment: fixed, scroll;
   background-repeat: no-repeat, repeat-y;
   background-size: cover;
