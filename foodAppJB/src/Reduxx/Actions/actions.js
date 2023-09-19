@@ -70,6 +70,7 @@ export function get_Diets() {
       const { data } = await axios.get(`${VITE_API_URL}diets`);
       return dispatch({ type: GET_DIETS, payload: data });
     } catch (error) {
+      console.log(error)
       return dispatch({ type: GET_DIETS, payload: error.response.data.error });
     }
   };
