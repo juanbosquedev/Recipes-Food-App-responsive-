@@ -68,6 +68,7 @@ export function get_Diets() {
   return async function (dispatch) {
     try {
       const { data } = await axios.get(`${VITE_API_URL}diets`);
+      console.log(data)
       return dispatch({ type: GET_DIETS, payload: data });
     } catch (error) {
       console.log(error)
