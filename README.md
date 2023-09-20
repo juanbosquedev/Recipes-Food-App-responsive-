@@ -1,6 +1,9 @@
 # Recipes Food
 
-- Deploy Link: https://recipes-responsive.vercel.app/
+- Deploy front: https://recipes-responsive.vercel.app/
+- Deploy back routes recipes: https://apirecipes.onrender.com/recipes
+- diets: https://apirecipes.onrender.com/diets
+- recipes Created: https://apirecipes.onrender.com/recipesCreated
 
 An application whit a landing page, wich introduce in a home component where you can navigate through several recipes through a paginate, also you can search by ingredient or diet type, do sorting by diet, health score, and alphabetically.
 On the other hand, clicking the title name of the recipes it will show the recipes details.
