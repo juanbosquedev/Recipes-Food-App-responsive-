@@ -20,7 +20,7 @@ export function get_recipe(name) {
   return async function (dispatch) {
     try {
       const { data } = await axios.get(
-        `${VITE_API_URL}recipes?name=${name}`
+        `${VITE_API_URL}/recipes?name=${name}`
       );
 
       return dispatch({ type: GET_RECIPE, payload: data });
@@ -35,7 +35,7 @@ export function get_recipe(name) {
 export function get_Detail(id) {
   return async function (dispatch) {
     try {
-      const { data } = await axios.get(`${VITE_API_URL}recipes/${id}`);
+      const { data } = await axios.get(`${VITE_API_URL}/recipes/${id}`);
       return dispatch({ type: GET_DETAILS, payload: data });
     } catch (error) {
       return dispatch({
@@ -54,7 +54,7 @@ export function cleanUpDetails() {
 export function create_Recipe(object) {
   return async function (dispatch) {
     try {
-      const { data } = await axios.post(`${VITE_API_URL}recipes`, object);
+      const { data } = await axios.post(`${VITE_API_URL}/recipes`, object);
       return dispatch({ type: CREATE_RECIPE, payload: data });
     } catch (error) {
       return dispatch({
@@ -67,7 +67,7 @@ export function create_Recipe(object) {
 export function get_Diets() {
   return async function (dispatch) {
     try {
-      const { data } = await axios.get(`${VITE_API_URL}diets`);
+      const { data } = await axios.get(`${VITE_API_URL}/diets`);
       console.log(data)
       return dispatch({ type: GET_DIETS, payload: data });
     } catch (error) {
@@ -94,7 +94,7 @@ export const deleteRecipeCreated = (id) => {
 export function showRecipesCreated() {
   return async function (dispatch) {
     try {
-      const { data } = await axios.get(`${VITE_API_URL}recipesCreated`);
+      const { data } = await axios.get(`${VITE_API_URL}/recipesCreated`);
       return dispatch({ type: SHOW_RECIPES_CREATED, payload: data });
     } catch (error) {
       return dispatch({
