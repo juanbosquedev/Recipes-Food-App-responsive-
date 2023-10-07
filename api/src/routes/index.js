@@ -55,7 +55,7 @@ router.get("/recipesCreated", async (req, res) => {
 
 router.get("/recipes", async (req, res) => {
   const name = req.query.name;
-  getAllApiInformation();
+ await getAllApiInformation();
   try {
     if (name) {
       const dieta = await DietsTypes.findOne({

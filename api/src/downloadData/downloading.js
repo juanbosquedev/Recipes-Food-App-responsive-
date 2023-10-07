@@ -10,7 +10,7 @@ const { getInfo } = require("../downloadData/reutilizable");
 
 const getAllApiInformation = async () => {
   const verDb = await Recipe.findAll();
-  console.log(verDb)
+
   if (verDb.length > 0) {
     return verDb;
   }
