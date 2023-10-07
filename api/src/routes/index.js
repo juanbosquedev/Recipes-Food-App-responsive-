@@ -8,8 +8,18 @@ const {
 } = require("../downloadData/downloading");
 const { Recipe, DietsTypes } = require("../db");
 
-let RecipesLoad = 0;
-RecipesLoad === 0 && getAllApiInformation();
+// let RecipesLoad = 0;
+// RecipesLoad === 0 && getAllApiInformation();
+// const controllers = require("../controllers");
+// const middlewares = require("../middlewares");
+
+// const router = Router();
+// router.delete("/:id", controllers.deleteCharacter)
+// router.post("/", controllers.createCharacter);
+// router.put("/:id", middlewares.characterValidation, controllers.updateCharacter)
+// router.get("/:id", controllers.getCharacterById); 
+// router.get("/", controllers.getCharacters);
+
 
 const router = Router();
 
@@ -45,6 +55,7 @@ router.get("/recipesCreated", async (req, res) => {
 
 router.get("/recipes", async (req, res) => {
   const name = req.query.name;
+  getAllApiInformation();
   try {
     if (name) {
       const dieta = await DietsTypes.findOne({
