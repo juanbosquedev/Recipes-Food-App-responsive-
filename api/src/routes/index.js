@@ -13,6 +13,8 @@ const { Recipe, DietsTypes } = require("../db");
 // const controllers = require("../controllers");
 // const middlewares = require("../middlewares");
 
+// const controllers = require("../controllers")
+// router.get("/recipes/:id", controllers.getById );
 // const router = Router();
 // router.delete("/:id", controllers.deleteCharacter)
 // router.post("/", controllers.createCharacter);
