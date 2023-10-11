@@ -33,5 +33,14 @@ server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   console.error("falle aca", err);
   res.status(status).send(message);
 });
+server.use("*", (req, res)=>{
+  res.status(404).send("Not Found")
+});
+server.use((err, req, res, next) => {
+res.status(err.statusCode || 500).send({
+  error: true,
+  message: err.message,
+});
+});
 
 module.exports = server;

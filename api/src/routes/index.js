@@ -1,7 +1,10 @@
 require("dotenv").config();
 const { Router } = require("express");
-const { Op, Association } = require("sequelize");
-const { API_KEY } = process.env;
+const {
+  Op,
+  // , Association
+} = require("sequelize");
+// const { API_KEY } = process.env;
 const {
   getAllApiInformation,
   allDiets,
@@ -10,7 +13,7 @@ const { Recipe, DietsTypes } = require("../db");
 
 // let RecipesLoad = 0;
 // RecipesLoad === 0 && getAllApiInformation();
-// const controllers = require("../controllers");
+const controllers = require("../controllers");
 // const middlewares = require("../middlewares");
 
 // const controllers = require("../controllers")
@@ -19,26 +22,26 @@ const { Recipe, DietsTypes } = require("../db");
 // router.delete("/:id", controllers.deleteCharacter)
 // router.post("/", controllers.createCharacter);
 // router.put("/:id", middlewares.characterValidation, controllers.updateCharacter)
-// router.get("/:id", controllers.getCharacterById); 
+// router.get("/:id", controllers.getCharacterById);
 // router.get("/", controllers.getCharacters);
 
-
 const router = Router();
+router.get("/recipes/:id", controllers.getById);
 
-router.get("/recipes/:id", async (req, res) => {
-  const { id } = req.params;
-  if (!id) return res.status(400).send("recipe not found");
-  try {
-    const data = await Recipe.findOne({
-      where: {
-        id: { [Op.eq]: id },
-      },
-    });
-    return res.status(200).json(data);
-  } catch (error) {
-    return res.status(400).send("serch details error").json(error);
-  }
-});
+// router.get("/recipes/:id",  async (req, res) => {
+//   const { id } = req.params;
+//   if (!id) return res.status(400).send("recipe not found");
+//   try {
+//     const data = await Recipe.findOne({
+//       where: {
+//         id: { [Op.eq]: id },
+//       },
+//     });
+//     return res.status(200).json(data);
+//   } catch (error) {
+//     return res.status(400).send("serch details error").json(error);
+//   }
+// });
 
 router.get("/recipesCreated", async (req, res) => {
   const created = await Recipe.findAll({
@@ -57,7 +60,7 @@ router.get("/recipesCreated", async (req, res) => {
 
 router.get("/recipes", async (req, res) => {
   const name = req.query.name;
- await getAllApiInformation();
+  await getAllApiInformation();
   try {
     if (name) {
       const dieta = await DietsTypes.findOne({
