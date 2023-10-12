@@ -1,10 +1,8 @@
 require("dotenv").config();
 const { Router } = require("express");
-const {
-  Op,
-  // , Association
-} = require("sequelize");
-// const { API_KEY } = process.env;
+const { Op, Association } = require("sequelize");
+const { Sequelize } = require("sequelize");
+const { API_KEY } = process.env;
 const {
   getAllApiInformation,
   allDiets,
@@ -22,11 +20,12 @@ const controllers = require("../controllers");
 // router.delete("/:id", controllers.deleteCharacter)
 // router.post("/", controllers.createCharacter);
 // router.put("/:id", middlewares.characterValidation, controllers.updateCharacter)
-// router.get("/:id", controllers.getCharacterById);
+// router.get("/:id", controllers.getCharacterById); 
 // router.get("/", controllers.getCharacters);
 
+
 const router = Router();
-router.get("/recipes/:id", controllers.getById);
+router.get("/recipes/:id", controllers.getById );
 
 // router.get("/recipes/:id",  async (req, res) => {
 //   const { id } = req.params;
@@ -60,7 +59,7 @@ router.get("/recipesCreated", async (req, res) => {
 
 router.get("/recipes", async (req, res) => {
   const name = req.query.name;
-  await getAllApiInformation();
+ await getAllApiInformation();
   try {
     if (name) {
       const dieta = await DietsTypes.findOne({
