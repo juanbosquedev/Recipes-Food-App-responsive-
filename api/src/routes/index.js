@@ -14,9 +14,8 @@ const { Recipe, DietsTypes } = require("../db");
 const controllers = require("../controllers");
 // const middlewares = require("../middlewares");
 
-// const controllers = require("../controllers")
-// router.get("/recipes/:id", controllers.getById );
-// const router = Router();
+
+
 // router.delete("/:id", controllers.deleteCharacter)
 // router.post("/", controllers.createCharacter);
 // router.put("/:id", middlewares.characterValidation, controllers.updateCharacter)
@@ -27,20 +26,8 @@ const controllers = require("../controllers");
 const router = Router();
 router.get("/recipes/:id", controllers.getById );
 
-// router.get("/recipes/:id",  async (req, res) => {
-//   const { id } = req.params;
-//   if (!id) return res.status(400).send("recipe not found");
-//   try {
-//     const data = await Recipe.findOne({
-//       where: {
-//         id: { [Op.eq]: id },
-//       },
-//     });
-//     return res.status(200).json(data);
-//   } catch (error) {
-//     return res.status(400).send("serch details error").json(error);
-//   }
-// });
+router.get("/recipesAll", controllers.firstCall );
+
 
 router.get("/recipesCreated", async (req, res) => {
   const created = await Recipe.findAll({
@@ -57,45 +44,57 @@ router.get("/recipesCreated", async (req, res) => {
   }
 });
 
-router.get("/recipes", async (req, res) => {
-  const name = req.query.name;
- await getAllApiInformation();
-  try {
-    if (name) {
-      const dieta = await DietsTypes.findOne({
-        where: {
-          name: name,
-        },
-      });
-      if (dieta) {
-        let recipes = await Recipe.findAll();
-        let byDiets = recipes.filter((el) => el.diets.includes(dieta.name));
-        recipes.map(async (el) => {
-          await el.addDietsTypes(dieta.id);
-        });
-        if (byDiets) {
-          return res.status(200).json(byDiets);
-        }
-      } else if (name) {
-        const recipe = await Recipe.findAll({
-          where: {
-            name: { [Op.iLike]: `%${name}%` },
-          },
-        });
-        if (recipe.length > 0) {
-          return res.status(200).json(recipe);
-        } else {
-          return res.status(300).send("Try with another product!");
-        }
-      }
-    } else {
-      const info = await Recipe.findAll();
-      return res.status(200).json(info);
-    }
-  } catch (error) {
-    return res.status(400).json(error);
-  }
-});
+// router.get("/recipes", async (req, res) => {
+//   try{
+//   const name = req.query.name;
+//   const requestBack= await getAllApiInformation();
+//   console.log(requestBack, " backrequest")
+//   if(requestBack.length === 0){
+//    const recipes = await Recipe.findAll();
+//    console.log(recipes, " recipes")
+
+//    return res.status(200).json(recipes);}
+// }catch(error){
+//   console.log(error, " soy error")
+//   return res.status(400).json(error)
+
+// }
+  // try {
+  //   if (name) {
+  //     const dieta = await DietsTypes.findOne({
+  //       where: {
+  //         name: name,
+  //       },
+  //     });
+  //     if (dieta) {
+  //       let recipes = await Recipe.findAll();
+  //       let byDiets = recipes.filter((el) => el.diets.includes(dieta.name));
+  //       recipes.map(async (el) => {
+  //         await el.addDietsTypes(dieta.id);
+  //       });
+  //       if (byDiets) {
+  //         return res.status(200).json(byDiets);
+  //       }
+  //     } else if (name) {
+  //       const recipe = await Recipe.findAll({
+  //         where: {
+  //           name: { [Op.iLike]: `%${name}%` },
+  //         },
+  //       });
+  //       if (recipe.length > 0) {
+  //         return res.status(200).json(recipe);
+  //       } else {
+  //         return res.status(300).send("Try with another product!");
+  //       }
+  //     }
+  //   } else {
+  //     const info = await Recipe.findAll();
+  //     return res.status(200).json(info);
+  //   }
+  // } catch (error) {
+  //   return res.status(400).json(error);
+  // }
+// });
 
 router.post("/recipes", async (req, res) => {
   const { name, summary, steps, image, diets } = req.body;

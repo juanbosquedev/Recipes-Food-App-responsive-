@@ -1,4 +1,5 @@
 import axios from "axios";
+export const GET_ALL = "GET_ALL";
 
 export const GET_RECIPE = "GET_RECIPE";
 export const CLEAN_UP_DETAILS = "CLEAN_UP_DETAILS";
@@ -16,6 +17,24 @@ export const DELETE_RECIPE_CREATED = "DELETE_RECIPE_CREATED";
 
 const { VITE_API_URL } = import.meta.env;
 
+export function get_all() {
+  return async function (dispatch) {
+    try {
+      const { data } = await axios.get(
+        `${VITE_API_URL}/recipesAll`
+      );
+
+      return dispatch({ type: GET_ALL, payload: data });
+    } catch (error) {
+      return dispatch({
+        type: GET_ALL,
+        payload: error,
+      });
+    }
+  };
+}
+
+
 export function get_recipe(name) {
   return async function (dispatch) {
     try {
@@ -32,6 +51,7 @@ export function get_recipe(name) {
     }
   };
 }
+
 export function get_Detail(id) {
   return async function (dispatch) {
     try {

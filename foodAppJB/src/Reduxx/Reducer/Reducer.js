@@ -1,4 +1,5 @@
 import {
+  GET_ALL,
   GET_DETAILS,
   DELETE_RECIPE,
   GET_RECIPE,
@@ -44,6 +45,15 @@ const reducer = (state = initialState, action) => {
         allRecipes:action.payload,
       };
     }
+     
+  
+      case GET_ALL: {
+        return {
+          ...state,
+          recipes: action.payload,
+          allRecipes:action.payload,
+        };
+      }
 
     case GET_DETAILS: {
       return {

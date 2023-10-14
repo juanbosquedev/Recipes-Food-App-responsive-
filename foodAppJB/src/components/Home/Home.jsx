@@ -6,8 +6,9 @@ import { useEffect } from "react";
 import Paginate from "../Paginate/Paginate";
 import Style from "../Home/Home.module.css";
 import {
+  get_all,
   get_Diets,
-  get_recipe,
+  // get_recipe,
   dietsFilter,
   ScoreOrderA,
   ScoreOrderD,
@@ -29,7 +30,9 @@ export default function Home() {
 
   useEffect(() => {
     if (recipes.length === 0) {
-      dispatch(get_recipe(input));
+      console.log("entre al use efect home")
+      dispatch(get_all())
+      // dispatch(get_recipe(input));
       dispatch(get_Diets());
     }
   }, [dispatch, input, recipes.length]);

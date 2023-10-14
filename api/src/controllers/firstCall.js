@@ -1,26 +1,25 @@
 const { Recipe } = require("../db");
-const Sequelize = require("sequelize");
-const {getRcipesAPI} = require("../downloadData/downloading")
+const {getAllApiInformation} = require("../downloadData/downloading")
 
 
 
 module.exports = async (req, res) => {
 
-try{
-    const recipes = await Recipe.findAll();
-    if (recipes.length === 0) {
-      // La tabla de recetas está vacía, llama a la función para llenarla
-      await getRcipesAPI();
-      // Después de llenar la tabla, vuelve a buscar las recetas
-      const updatedRecipes = await Recipe.findAll();
-      return res.status(200).json(updatedRecipes);
-    } else {
+  try{
+  const pruve = await Recipe.findAll();
+  console.log("pruve ", pruve)
+  
+    if (pruve.length === 0) {
+
+      const recipes =  await getAllApiInformation();;
       return res.status(200).json(recipes);
-    }
+    } 
+      return res.status(200).json(pruve);
+    
     
   }
   catch(error){
-    console.log(error, " soy error")
-    res.status(400).send(error);
+
+    res.status(405).send(error);
   }
 };
