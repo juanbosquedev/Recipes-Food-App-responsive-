@@ -41,6 +41,7 @@ router.get("/recipesCreated", async (req, res) => {
 });
 
 router.get("/recips/:name", async (req, res) => {
+
   try {
     const name = req.params.name;
 

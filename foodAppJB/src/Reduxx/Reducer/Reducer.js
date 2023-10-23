@@ -3,6 +3,8 @@ import {
   GET_DETAILS,
   DELETE_RECIPE,
   GET_RECIPE,
+  GET_RECIPES,
+
   CREATE_RECIPE,
   CLEAN_UP_DETAILS,
   GET_DIETS,
@@ -39,6 +41,14 @@ function order(arr, prop) {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_RECIPE: {
+      return {
+        ...state,
+        recipes: action.payload,
+        allRecipes:action.payload,
+      };
+    }
+    case GET_RECIPES: {
+      console.log(action.payload, " action payload")
       return {
         ...state,
         recipes: action.payload,

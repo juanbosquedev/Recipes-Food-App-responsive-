@@ -2,6 +2,8 @@ import axios from "axios";
 export const GET_ALL = "GET_ALL";
 
 export const GET_RECIPE = "GET_RECIPE";
+export const GET_RECIPES = "GET_RECIPES";
+
 export const CLEAN_UP_DETAILS = "CLEAN_UP_DETAILS";
 export const GET_DETAILS = "GET_DETAILS";
 export const CREATE_RECIPE = "CREATE_RECIPE";
@@ -38,14 +40,15 @@ export function get_all() {
 export function get_recipe(name) {
   return async function (dispatch) {
     try {
+      console.log(name, " soy name en redux")
       const { data } = await axios.get(
-        `${VITE_API_URL}/recips/:${name}`
+        `${VITE_API_URL}/recips/${name}`
       );
-
-      return dispatch({ type: GET_RECIPE, payload: data });
+      
+      return dispatch({ type: GET_RECIPES, payload: data });
     } catch (error) {
       return dispatch({
-        type: GET_RECIPE,
+        type: GET_RECIPES,
         payload: error,
       });
     }

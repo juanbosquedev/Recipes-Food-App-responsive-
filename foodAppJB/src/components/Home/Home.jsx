@@ -28,6 +28,13 @@ export default function Home() {
   const dispatch = useDispatch();
   const [paginado, setPaginado] = useState();
 
+ 
+  useEffect(() => {
+
+    if(input.length !== 0){
+    dispatch(get_recipe(input));
+    }
+  }, [ input]);
   useEffect(() => {
     if (recipes.length === 0) {
       dispatch(get_all());
@@ -35,15 +42,10 @@ export default function Home() {
     }
   }, [dispatch, recipes.length]);
   useEffect(() => {
-    if (input.length === 0) {
-      dispatch(get_recipe(input));
-    }
-  }, [dispatch, input, recipes.length]);
-  useEffect(() => {
     if (details.length !== 0) {
       dispatch(cleanUpDetails());
     }
-  }, [dispatch, details]);
+  }, [ details]);
 
   function HandlerDietsFilter(e) {
     dispatch(dietsFilter(e.target.value));
