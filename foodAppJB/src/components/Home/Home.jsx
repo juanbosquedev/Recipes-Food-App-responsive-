@@ -35,7 +35,7 @@ export default function Home() {
     dispatch(get_recipe(input));}
     else{
       dispatch(get_all());
-    }
+    
     }
   }, [ input]);
   useEffect(() => {
