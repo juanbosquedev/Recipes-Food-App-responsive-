@@ -24,7 +24,7 @@ export default function Card({
           dispatch(deleteRecipeCreated(id));
         }}
       >
-        X
+        ❌
       </button>
       <Link style={{ textDecoration: "none" }} to={`/CardDetail/${id}`}>
         <h4 className={Style.title}>{name}</h4>
