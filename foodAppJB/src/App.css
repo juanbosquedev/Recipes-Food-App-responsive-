@@ -1,8 +1,8 @@
 #root {
-padding: 0;
-margin: 0;
-box-sizing: border-box;
-font-size: clamp(15px, 5vw, 17px);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: clamp(15px, 5vw, 17px);
 }
 
 body {

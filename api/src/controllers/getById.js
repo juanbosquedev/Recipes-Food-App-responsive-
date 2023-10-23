@@ -3,9 +3,8 @@ const  Sequelize  = require("sequelize");
 
 module.exports = async (req, res) => {
   const { id } = req.params;
-  console.log(id, "soy id");
   if (!id) {
-    console.log("entre aca")
+
     return res.status(400).send("Recipe not found");
   }
 

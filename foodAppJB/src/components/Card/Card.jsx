@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { deleteRecipeCreated } from "../../Reduxx/Actions/actions";
-import PropTypes from 'prop-types'; 
+import PropTypes from "prop-types";
 import Style from "./Card.module.css";
 
 export default function Card({
@@ -44,7 +44,6 @@ export default function Card({
     </div>
   );
 }
-
 
 Card.propTypes = {
   name: PropTypes.string.isRequired,

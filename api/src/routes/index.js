@@ -14,20 +14,16 @@ const { Recipe, DietsTypes } = require("../db");
 const controllers = require("../controllers");
 // const middlewares = require("../middlewares");
 
-
-
 // router.delete("/:id", controllers.deleteCharacter)
 // router.post("/", controllers.createCharacter);
 // router.put("/:id", middlewares.characterValidation, controllers.updateCharacter)
-// router.get("/:id", controllers.getCharacterById); 
+// router.get("/:id", controllers.getCharacterById);
 // router.get("/", controllers.getCharacters);
 
-
 const router = Router();
-router.get("/recipes/:id", controllers.getById );
+router.get("/recipes/:id", controllers.getById);
 
-router.get("/recipesAll", controllers.firstCall );
-
+router.get("/recipesAll", controllers.firstCall);
 
 router.get("/recipesCreated", async (req, res) => {
   const created = await Recipe.findAll({
@@ -44,22 +40,12 @@ router.get("/recipesCreated", async (req, res) => {
   }
 });
 
-router.get("/recipes", async (req, res) => {
-  try{
-  const name = req.query.name;
-  const requestBack= await getAllApiInformation();
-  console.log(requestBack, " backrequest")
-  if(requestBack.length === 0){
-   const recipes = await Recipe.findAll();
-   console.log(recipes, " recipes")
-
-   return res.status(200).json(recipes);}
-}catch(error){
-  console.log(error, " soy error")
-  return res.status(400).json(error)
-
-}
+router.get("/recips/:name", async (req, res) => {
   try {
+    const name = req.params.name;
+
+    if (!name) return res.status(400).send("Not a valid name");
+
     if (name) {
       const dieta = await DietsTypes.findOne({
         where: {

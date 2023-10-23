@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import Card from "../Card/Card";
@@ -8,7 +8,7 @@ import Style from "../Home/Home.module.css";
 import {
   get_all,
   get_Diets,
-  // get_recipe,
+  get_recipe,
   dietsFilter,
   ScoreOrderA,
   ScoreOrderD,
@@ -30,13 +30,15 @@ export default function Home() {
 
   useEffect(() => {
     if (recipes.length === 0) {
-      console.log("entre al use efect home")
-      dispatch(get_all())
-      // dispatch(get_recipe(input));
+      dispatch(get_all());
       dispatch(get_Diets());
     }
+  }, [dispatch, recipes.length]);
+  useEffect(() => {
+    if (input.length === 0) {
+      dispatch(get_recipe(input));
+    }
   }, [dispatch, input, recipes.length]);
-
   useEffect(() => {
     if (details.length !== 0) {
       dispatch(cleanUpDetails());
@@ -80,14 +82,14 @@ export default function Home() {
         />
         <span>
           <select
-            style={{backgroundColor:"#790c0c", border:" black solid 2px"}}
+            style={{ backgroundColor: "#790c0c", border: " black solid 2px" }}
             defaultValue="default"
             onChange={(e) => HandlerDietsFilter(e)}
             id="dietSelector"
             name="dietsType"
           >
             <option
-              style={{paddingBottom:"4px"}}
+              style={{ paddingBottom: "4px" }}
               id="dietsOrderer"
               name="dietsOrder"
               value="default"
@@ -105,7 +107,7 @@ export default function Home() {
           </select>
 
           <select
-            style={{backgroundColor:"#790c0c", border:" black solid 2px"}}
+            style={{ backgroundColor: "#790c0c", border: " black solid 2px" }}
             defaultValue="default"
             id="dietsByName"
             name="names"
@@ -117,7 +119,7 @@ export default function Home() {
           </select>
 
           <select
-            style={{backgroundColor:"#790c0c", border: "black solid 2px"}}
+            style={{ backgroundColor: "#790c0c", border: "black solid 2px" }}
             defaultValue="default"
             id="dietsByScore"
             name="score"
@@ -148,8 +150,8 @@ export default function Home() {
           })
         ) : (
           <>
-          <h4 className={Style.loade}>not found</h4>
-          <h5 className={Style.loader}></h5>
+            <h4 className={Style.loade}>not found</h4>
+            <h5 className={Style.loader}></h5>
           </>
         )}
       </div>

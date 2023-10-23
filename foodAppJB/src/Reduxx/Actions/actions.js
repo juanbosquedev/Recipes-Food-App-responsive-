@@ -39,7 +39,7 @@ export function get_recipe(name) {
   return async function (dispatch) {
     try {
       const { data } = await axios.get(
-        `${VITE_API_URL}/recipes?name=${name}`
+        `${VITE_API_URL}/recips/:${name}`
       );
 
       return dispatch({ type: GET_RECIPE, payload: data });
