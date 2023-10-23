@@ -32,12 +32,15 @@ export default function Home() {
   useEffect(() => {
 
     if(input.length !== 0){
-    dispatch(get_recipe(input));
+    dispatch(get_recipe(input));}
+    else{
+      dispatch(get_all());
+    }
     }
   }, [ input]);
   useEffect(() => {
     if (recipes.length === 0) {
-      dispatch(get_all());
+     
       dispatch(get_Diets());
     }
   }, [dispatch, recipes.length]);
