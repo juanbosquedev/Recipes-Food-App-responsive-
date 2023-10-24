@@ -9,8 +9,7 @@ const {
 } = require("../downloadData/downloading");
 const { Recipe, DietsTypes } = require("../db");
 
-// let RecipesLoad = 0;
-// RecipesLoad === 0 && getAllApiInformation();
+
 const controllers = require("../controllers");
 // const middlewares = require("../middlewares");
 
@@ -40,48 +39,7 @@ router.get("/recipesCreated", async (req, res) => {
   }
 });
 
-router.get("/recips/:name", async (req, res) => {
-
-  try {
-    const name = req.params.name;
-
-    if (!name) return res.status(400).send("Not a valid name");
-
-    if (name) {
-      const dieta = await DietsTypes.findOne({
-        where: {
-          name: name,
-        },
-      });
-      if (dieta) {
-        let recipes = await Recipe.findAll();
-        let byDiets = recipes.filter((el) => el.diets.includes(dieta.name));
-        recipes.map(async (el) => {
-          await el.addDietsTypes(dieta.id);
-        });
-        if (byDiets) {
-          return res.status(200).json(byDiets);
-        }
-      } else if (name) {
-        const recipe = await Recipe.findAll({
-          where: {
-            name: { [Op.iLike]: `%${name}%` },
-          },
-        });
-        if (recipe.length > 0) {
-          return res.status(200).json(recipe);
-        } else {
-          return res.status(300).send("Try with another product!");
-        }
-      }
-    } else {
-      const info = await Recipe.findAll();
-      return res.status(200).json(info);
-    }
-  } catch (error) {
-    return res.status(400).json(error);
-  }
-});
+router.get("/recips/:name", controllers.getByName);
 
 router.post("/recipes", async (req, res) => {
   const { name, summary, steps, image, diets } = req.body;

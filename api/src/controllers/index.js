@@ -1,4 +1,5 @@
 module.exports = {
     getById: require("./getById"),
-    firstCall:require("./firstCall")
+    firstCall:require("./firstCall"),
+    getByName:require("./getByName")
 };

@@ -4,7 +4,6 @@ import {
   DELETE_RECIPE,
   GET_RECIPE,
   GET_RECIPES,
-
   CREATE_RECIPE,
   CLEAN_UP_DETAILS,
   GET_DIETS,
@@ -44,7 +43,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         recipes: action.payload,
-        allRecipes:action.payload,
+        allRecipes: action.payload,
       };
     }
     case GET_RECIPES: {
@@ -53,15 +52,14 @@ const reducer = (state = initialState, action) => {
         recipes: action.payload,
       };
     }
-     
-  
-      case GET_ALL: {
-        return {
-          ...state,
-          recipes: action.payload,
-          allRecipes:action.payload,
-        };
-      }
+
+    case GET_ALL: {
+      return {
+        ...state,
+        recipes: action.payload,
+        allRecipes: action.payload,
+      };
+    }
 
     case GET_DETAILS: {
       return {
@@ -96,7 +94,6 @@ const reducer = (state = initialState, action) => {
       };
     }
 
-      
     case DELETE_RECIPE_CREATED: {
       return {
         ...state,
