@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route exact path="/" element={<Welcome />} />
+        <Route path="/" element={<Welcome />} />
       </Routes>
       <Nav />
       <Routes>
