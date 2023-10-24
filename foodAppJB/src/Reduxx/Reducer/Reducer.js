@@ -48,11 +48,9 @@ const reducer = (state = initialState, action) => {
       };
     }
     case GET_RECIPES: {
-      console.log(action.payload, " action payload")
       return {
         ...state,
         recipes: action.payload,
-        allRecipes:action.payload,
       };
     }
      

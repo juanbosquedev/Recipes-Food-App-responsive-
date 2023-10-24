@@ -3,13 +3,14 @@ import { useDispatch } from "react-redux";
 import { get_recipe } from "../../Reduxx/Actions/actions";
 import { useRef, useState } from "react";
 import Style from "./Search.module.css";
+import propTypes from "prop-types"; 
 
 export default function SearchBar({ setInput }) {
   const dispatch = useDispatch();
   const ref = useRef();
   const [state, setState] = useState("");
 
-  function handleChanges(e) {
+  function handleChanges() {
     const inputValue = ref.current.value;
     setState(inputValue);
   }
@@ -21,14 +22,7 @@ export default function SearchBar({ setInput }) {
   }
   return (
     <div>
-      <form
-        id="formSearch"
-        name="form-search"
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleSubmit(e);
-        }}
-      >
+      <form id="formSearch" name="form-search" onSubmit={handleSubmit}>
         <input
           id="searched"
           name="search"
@@ -43,4 +37,9 @@ export default function SearchBar({ setInput }) {
       </form>
     </div>
   );
+}
+
+
+SearchBar.propTypes = {
+  setInput : propTypes.func.isRequired,
 }
