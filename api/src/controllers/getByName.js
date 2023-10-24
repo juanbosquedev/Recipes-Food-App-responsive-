@@ -5,9 +5,7 @@ const { Op, Association } = require("sequelize");
 module.exports = async (req, res) => {
   const name = req.params.name;
   try {
-    console.log(name, " soy name");
     if (!name) return res.status(401).send("Not a valid name");
-
     if (name) {
       const dieta = await DietsTypes.findOne({
         where: {
