@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Nav from "./components/Nav/Nav.jsx";
 import Home from "./components/Home/Home.jsx";
 import CardDetail from "./components/CardDetail/CardDetail.jsx";
@@ -19,6 +19,7 @@ function App() {
         <Route path="/CardDetail/:id" element={<CardDetail />} />
         <Route path="/RecipesCreated" element={<RecipesCreated />} />
         <Route path="/CreateRecipe" element={<CreateRecipe />} />
+        <Route path='/*' element={<Navigate to='/'></Navigate>}></Route>
       </Routes>
     </div>
   );
