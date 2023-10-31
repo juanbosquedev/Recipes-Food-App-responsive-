@@ -15,7 +15,7 @@ function App() {
       </Routes>
       <Nav />
       <Routes>
-        <Route exact ="/home" element={<Home />} />
+        <Route exact path ="/home" element={<Home />} />
         <Route path="/CardDetail/:id" element={<CardDetail />} />
         <Route path="/RecipesCreated" element={<RecipesCreated />} />
         <Route path="/CreateRecipe" element={<CreateRecipe />} />
