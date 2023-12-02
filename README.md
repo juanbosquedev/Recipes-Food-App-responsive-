@@ -1,7 +1,7 @@
 # Recipes Food
 
 - Deploy front: https://recipes-responsive.vercel.app/
-- Deploy back routes recipes: https://apirecipes.onrender.com/recipes
+- Deploy back routes recipes: https://apirecipes.onrender.com/recipesAll
 - diets: https://apirecipes.onrender.com/diets
 - recipes Created: https://apirecipes.onrender.com/recipesCreated
 
