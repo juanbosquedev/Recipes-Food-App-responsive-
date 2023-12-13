@@ -26,21 +26,23 @@ export default function Card({
       >
         ❌
       </button>
-      <Link style={{ textDecoration: "none" }} to={`/CardDetail/${id}`}>
-        <h4 className={Style.title}>{name}</h4>
-      </Link>
       <div className={Style.image}>
         <img src={image} alt="" />
       </div>
-      <section className={Style.section}>
-        <p>
-          CookingTime: {cookingTime}
-          <br />
-          Servings: {servings}
-          <br />
-          Diet Type: {diets}
-        </p>
-      </section>
+      <div className={Style.bodyCard}>
+        <Link style={{ textDecoration: "none" }} to={`/CardDetail/${id}`}>
+          <h4 className={Style.title}>{name}</h4>
+        </Link>
+        <section className={Style.section}>
+          <p>
+            CookingTime: {cookingTime}
+            <br />
+            Servings: {servings}
+            <br />
+            Diet Type: {diets}
+          </p>
+        </section>
+      </div>
     </div>
   );
 }
