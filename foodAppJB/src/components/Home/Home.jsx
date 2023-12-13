@@ -15,10 +15,10 @@ import {
   NameOrderA,
   NameOrderD,
   deleteRecipe,
-} from "../../Reduxx/Actions/actions";
+} from "../../Reduxx/Actions/actionsCreator";
 import SearchBar from "../Search/SearchBar";
 
-import { cleanUpDetails } from "../../Reduxx/Actions/actions";
+import { cleanUpDetails } from "../../Reduxx/Actions/actionsCreator";
 
 export default function Home() {
   const recipes = useSelector((state) => state.recipes);

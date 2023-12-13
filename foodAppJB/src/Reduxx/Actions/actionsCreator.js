@@ -40,7 +40,6 @@ export function get_all() {
 export function get_recipe(name) {
   return async function (dispatch) {
     try {
-      console.log(name, " soy name en redux")
       const { data } = await axios.get(
         `${VITE_API_URL}/recips/${name}`
       );

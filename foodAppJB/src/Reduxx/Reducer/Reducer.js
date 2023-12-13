@@ -14,7 +14,7 @@ import {
   NAME_ORDER_A,
   NAME_ORDER_D,
   DELETE_RECIPE_CREATED,
-} from "../Actions/actions";
+} from "../Actions/actionsCreator";
 
 const initialState = {
   recipes: [],

@@ -1,7 +1,7 @@
 import  { useState } from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { get_recipe } from "../../Reduxx/Actions/actions";
+import { get_recipe } from "../../Reduxx/Actions/actionsCreator";
 import Style from "./Paginate.module.css";
 
 export default function Paginate({ setPaginado }) {

@@ -15,11 +15,11 @@ function App() {
       </Routes>
       <Nav />
       <Routes>
-        <Route exact path ="/home" element={<Home />} />
+        <Route exact path="/home" element={<Home />} />
         <Route path="/CardDetail/:id" element={<CardDetail />} />
         <Route path="/RecipesCreated" element={<RecipesCreated />} />
         <Route path="/CreateRecipe" element={<CreateRecipe />} />
-        <Route path='/*' element={<Navigate to='/'></Navigate>}></Route>
+        <Route path="/*" element={<Navigate to="/"></Navigate>}></Route>
       </Routes>
     </div>
   );

@@ -1,5 +1,4 @@
 const getInfo = function (obj) {
-  console.log(obj, " getInfo")
   return {
     idOriginal: obj.id,
     name: obj.title,

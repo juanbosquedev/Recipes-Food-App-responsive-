@@ -1,7 +1,7 @@
-import React from "react";
+
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { showRecipesCreated, deleteRecipeCreated } from "../../Reduxx/Actions/actions";
+import { showRecipesCreated, deleteRecipeCreated } from "../../Reduxx/Actions/actionsCreator";
 import Card from "../Card/Card";
 import Style from "./RecipesCreated.module.css"
 

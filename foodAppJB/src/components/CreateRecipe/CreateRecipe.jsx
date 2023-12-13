@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { create_Recipe } from "../../Reduxx/Actions/actions";
+import { create_Recipe } from "../../Reduxx/Actions/actionsCreator";
 import { useSelector } from "react-redux";
-import { get_Diets } from "../../Reduxx/Actions/actions";
+import { get_Diets } from "../../Reduxx/Actions/actionsCreator";
 import Style from "../CreateRecipe/CreateRecipe.module.css";
 import validate from "./validate";
 

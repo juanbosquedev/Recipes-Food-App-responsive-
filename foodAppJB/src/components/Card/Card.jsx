@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { deleteRecipeCreated } from "../../Reduxx/Actions/actions";
+import { deleteRecipeCreated } from "../../Reduxx/Actions/actionsCreator";
 import PropTypes from "prop-types";
 import Style from "./Card.module.css";
 

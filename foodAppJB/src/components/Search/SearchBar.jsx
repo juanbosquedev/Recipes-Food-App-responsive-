@@ -1,6 +1,6 @@
-import React from "react";
+
 import { useDispatch } from "react-redux";
-import { get_recipe } from "../../Reduxx/Actions/actions";
+import { get_recipe } from "../../Reduxx/Actions/actionsCreator";
 import { useRef, useState } from "react";
 import Style from "./Search.module.css";
 import propTypes from "prop-types"; 

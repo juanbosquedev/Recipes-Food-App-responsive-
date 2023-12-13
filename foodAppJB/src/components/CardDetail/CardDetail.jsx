@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { get_Detail } from "../../Reduxx/Actions/actions";
+import { get_Detail } from "../../Reduxx/Actions/actionsCreator";
 import Style from "./CardDetail..module.css";
 
 export default function CardDetail() {
