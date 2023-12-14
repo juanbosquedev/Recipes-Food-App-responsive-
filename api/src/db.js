@@ -7,24 +7,25 @@ const {
 } = process.env;
 
 
-// const sequelize = new Sequelize( `${DB_NAME}`, `${DB_USER}`, `${DB_PASSWORD}`, {
-//    host: 'localhost',
-//    dialect: `${DB_USER}`
-//  });
 
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
-  logging: false, // set to console.log to see the raw SQL queries
-  native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+const sequelize = new Sequelize(`${DB_NAME}`, `${DB_USER}`, `${DB_PASSWORD}`, {
+  host: `${DB_HOST}`,
+  dialect: `${DB_USER}`,
+  logging: false,
 });
-sequelize
-        .authenticate()
-        .then(() => {
-            console.log('Connection has been established successfully.');
-        })
-        .catch((err) => {
-            console.log('Unable to connect to the database:', err);
-        });
+// const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
+//   logging: false, // set to console.log to see the raw SQL queries
+//   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+// });
+// sequelize
+//         .authenticate()
+//         .then(() => {
+//             console.log('Connection has been established successfully.');
+//         })
+//         .catch((err) => {
+//             console.log('Unable to connect to the database:', err);
+//         });
 
 const basename = path.basename(__filename);
 
