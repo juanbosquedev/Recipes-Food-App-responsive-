@@ -1,85 +1,73 @@
 .card {
   position: relative;
-  scale: 1;
   display: grid;
-  grid-template-rows: auto;
+  grid-template: auto;
   box-shadow: 3px 3px #790c0c;
   height: 19rem;
-  width: 23rem;
+  width: 25rem;
   padding-bottom: 1rem;
   backdrop-filter: blur(8px);
   border-radius: 8px;
+  scale: 1;
   transition: scale 1s;
 }
-.bodyCard{
-  position: relative;
+.bodyCard {
   padding-left: 1rem;
+  align-content: first baseline;
 }
 .card:hover {
   scale: 1.1;
 }
-.title{
-
-  color: white;
-  margin: .5rem 0 0 0;
-
+.title {
+  color: rgb(247, 131, 89);
+  margin: -3rem 0 0 0;
 }
 
-.title:hover {
-  color: orangered;
-}
-
-.Link {
-  text-decoration: none;
-}
 .close {
   position: absolute;
   top: 10px;
   right: 10px;
-  padding: .5rem;
-  color: red;
+  padding: 0.5rem;
+  color: white;
   border-radius: 40px;
   border: 1px solid blueviolet;
-  background-color: rgb(62, 62, 107);
-  font-size: .9rem;
+  background-color: #790c0c;
+  font-size: 0.9rem;
 }
 .close:hover {
   background-color: black;
   color: red;
 }
 
-.section{
-position: relative;
-/* bottom: .3rem; */
-}
-.bodyCard >{
+.section {
   position: absolute;
-  /* bottom: .1rem; */
+  font-size: 16px;
+  text-decoration: none;
+  bottom: 0rem;
 }
-section > p {
- 
-  display: flex;
-  align-items: flex-start;
-  font-size: 11px;
-  color: white;
-  font-weight: bold;
-  text-align: left;
+.buttonDetail {
+  color: aqua;
 }
-section > span {
-  display: flex;
-  align-items: left;
-  font-size: 11px;
-  color: white;
-  font-weight: bold;
+.buttonDetail > span {
+  color: rgb(57, 243, 57);
+  margin-left: 1rem;
+}
+.buttonDetail > span:hover {
+  color: rgb(218, 226, 233);
+  box-shadow: 1px 1px 20px rgb(57, 243, 57);
+
+  border-radius: 30px;
 }
 
+.image {
+  height: 180px;
+}
 
 .image > img {
   display: block;
   width: 100%;
   height: 180px;
   max-height: 200px;
-
   border-radius: 10px 10px 0 0;
 }
 
@@ -87,9 +75,9 @@ section > span {
   .card {
     display: grid;
     width: 80%;
+    line-height: normal;
   }
   .title {
     height: 20px;
   }
-
 }

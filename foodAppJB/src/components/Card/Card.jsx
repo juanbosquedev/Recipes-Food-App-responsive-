@@ -6,11 +6,9 @@ import Style from "./Card.module.css";
 
 export default function Card({
   name,
-  diets,
   image,
   id,
   cookingTime,
-  servings,
   deleteRecipe,
 }) {
   const dispatch = useDispatch();
@@ -30,16 +28,16 @@ export default function Card({
         <img src={image} alt="" />
       </div>
       <div className={Style.bodyCard}>
-        <Link style={{ textDecoration: "none" }} to={`/CardDetail/${id}`}>
-          <h4 className={Style.title}>{name}</h4>
-        </Link>
+        <h4 className={Style.title}>{name}</h4>
         <section className={Style.section}>
           <p>
             CookingTime: {cookingTime}
             <br />
-            Servings: {servings}
-            <br />
-            Diet Type: {diets}
+           
+            <Link className={Style.buttonDetail} to={`/CardDetail/${id}`}>
+              Info & Details: 
+              <span >+</span>
+            </Link>
           </p>
         </section>
       </div>
