@@ -116,6 +116,7 @@ select > option {
   .home {
     display: grid;
     width: 100%;
+    justify-items: center;
   }
   .main {
     grid-template-columns: repeat(2, minmax(1rem, 1fr));
