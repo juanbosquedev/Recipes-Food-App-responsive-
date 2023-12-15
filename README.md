@@ -10,7 +10,7 @@
 <div class="display: flex; flex-wrap: wrap;">
 
 # Landing  # Card   # Spinner
-<img src="./images/recipes-landing.png" width="300"/> <img src="./images/loader animation.png" width="300"/> <img src="./images/recipes-home.png" width="300"/>
+<img src="./images/recipes-landing.png" width="300"/> <img src="./images/loader-animation.png" width="300"/> <img src="./images/recipes-home.png" width="300"/>
 
 # Details / # Created # form to create
 <img src="./images/recipes-details.png" width="300"/> <img src="./images/recipes-created.png" width="300"/> <img src="./images/recipes-formCreate.png" width="300"/>
