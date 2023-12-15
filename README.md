@@ -92,13 +92,6 @@ Concise description of the project and its purpose.
 
 ---
 
-#### Contributions
-
-Feel free to contribute to the project. Make sure to follow the contribution guidelines in the `CONTRIBUTING.md` file.
-
----
-
-This is just a basic example, and you can customize it according to the specific needs of your project. Ensure you provide clear and detailed instructions so that other developers can easily understand and contribute.
 
 
 The recipes data come from spoonaqular api.
