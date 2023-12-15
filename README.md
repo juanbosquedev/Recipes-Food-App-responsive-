@@ -6,6 +6,18 @@
 - Diets: https://apirecipes.onrender.com/diets
 - Recipes Created: https://apirecipes.onrender.com/recipesCreated
 
+- # Images
+<div class="display: flex; flex-wrap: wrap;">
+
+# Landing
+<img src="./images/recipes-landing.png" width="300"/> <img src="./images/loader-animation.png" width="300"/> <img src="./images/recipes-home.png" width="300"/>
+
+# Details
+<img src="./images/recipes-details.png" width="300"/> <img src="./images/recipes-created.png" width="300"/> <img src="./images/recipes-formCreate.png" width="300"/>
+
+</div>
+
+
 - The app was made with 
 - Front End side: Javascript, React-Redux, CSS.
 - Back End side: PostgreSql, Sequelize, Express, RESTapi web.
@@ -34,7 +46,7 @@ And finally through a form you be able to create your own recipe, being able to 
 
 
 # Images
-<div>
+<div class="display:>
   
 
 # Landing
