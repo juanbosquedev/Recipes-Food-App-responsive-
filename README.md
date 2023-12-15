@@ -18,60 +18,87 @@
 </div>
 
 
-Technologies Used
-HTML
-CSS
-JavaScript
-React
-Redux
-PostgreSQL
-Express
-Node.js
-Project Structure
-Frontend (Vite):
+T### Project Title
 
-Folder: foodAppJB
-Port: 5173
-Deployment: Developed with Vite, the frontend is located in the foodAppJB folder and is deployed on port 5173.
-Backend:
+Concise description of the project and its purpose.
 
-Folder: API
-Port: 3000
-Deployment: The backend is located in the API folder and runs on port 3000.
-Execution Instructions
-Frontend (Vite):
+---
 
-Navigate to the foodAppJB folder in the terminal.
-Run the following command to install dependencies:
-bash
-Copy code
-npm install
-Start the development server on port 5173 with the following command:
-bash
-Copy code
-npm run dev
-Backend:
+#### Technologies Used
 
-Navigate to the API folder in the terminal.
-Run the following command to install dependencies:
-bash
-Copy code
-npm install
-Start the server on port 3000 with the following command:
-bash
-Copy code
-npm start
-Folder Structure
-foodAppJB (Frontend):
+- HTML
+- CSS
+- JavaScript
+- React
+- Redux
+- PostgreSQL
+- Express
+- Node.js
 
-Folder: src (Frontend source code)
-Folder: public (Public resources)
-API (Backend):
+---
 
-Folder: src (Backend source code)
-Folder: config (Project configurations)
-Folder: routes (Backend routes)
-Folder: models (Database models)
+#### Project Structure
+
+- **Frontend (Vite):**
+  - Folder: `foodAppJB`
+  - Port: `5173`
+  - Deployment: Developed with Vite, the frontend is located in the `foodAppJB` folder and is deployed on port `5173`.
+
+- **Backend:**
+  - Folder: `API`
+  - Port: `3000`
+  - Deployment: The backend is located in the `API` folder and runs on port `3000`.
+
+---
+
+#### Execution Instructions
+
+1. **Frontend (Vite):**
+   - Navigate to the `foodAppJB` folder in the terminal.
+   - Run the following command to install dependencies:
+     ```bash
+     npm install
+     ```
+   - Start the development server on port `5173` with the following command:
+     ```bash
+     npm run dev
+     ```
+
+2. **Backend:**
+   - Navigate to the `API` folder in the terminal.
+   - Run the following command to install dependencies:
+     ```bash
+     npm install
+     ```
+   - Start the server on port `3000` with the following command:
+     ```bash
+     npm start
+     ```
+
+---
+
+#### Folder Structure
+
+- **foodAppJB (Frontend):**
+  - Folder: `src` (Frontend source code)
+  - Folder: `public` (Public resources)
+
+- **API (Backend):**
+  - Folder: `src` (Backend source code)
+  - Folder: `config` (Project configurations)
+  - Folder: `routes` (Backend routes)
+  - Folder: `models` (Database models)
+  - ...
+
+---
+
+#### Contributions
+
+Feel free to contribute to the project. Make sure to follow the contribution guidelines in the `CONTRIBUTING.md` file.
+
+---
+
+This is just a basic example, and you can customize it according to the specific needs of your project. Ensure you provide clear and detailed instructions so that other developers can easily understand and contribute.
 
 
 The recipes data come from spoonaqular api.
