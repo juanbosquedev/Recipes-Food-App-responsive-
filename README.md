@@ -18,9 +18,61 @@
 </div>
 
 
-- The app was made with 
-- Front End side: Javascript, React-Redux, CSS.
-- Back End side: PostgreSql, Sequelize, Express, RESTapi web.
+Technologies Used
+HTML
+CSS
+JavaScript
+React
+Redux
+PostgreSQL
+Express
+Node.js
+Project Structure
+Frontend (Vite):
+
+Folder: foodAppJB
+Port: 5173
+Deployment: Developed with Vite, the frontend is located in the foodAppJB folder and is deployed on port 5173.
+Backend:
+
+Folder: API
+Port: 3000
+Deployment: The backend is located in the API folder and runs on port 3000.
+Execution Instructions
+Frontend (Vite):
+
+Navigate to the foodAppJB folder in the terminal.
+Run the following command to install dependencies:
+bash
+Copy code
+npm install
+Start the development server on port 5173 with the following command:
+bash
+Copy code
+npm run dev
+Backend:
+
+Navigate to the API folder in the terminal.
+Run the following command to install dependencies:
+bash
+Copy code
+npm install
+Start the server on port 3000 with the following command:
+bash
+Copy code
+npm start
+Folder Structure
+foodAppJB (Frontend):
+
+Folder: src (Frontend source code)
+Folder: public (Public resources)
+API (Backend):
+
+Folder: src (Backend source code)
+Folder: config (Project configurations)
+Folder: routes (Backend routes)
+Folder: models (Database models)
+
 
 The recipes data come from spoonaqular api.
 
