@@ -5,9 +5,21 @@
 - diets: https://apirecipes.onrender.com/diets
 - recipes Created: https://apirecipes.onrender.com/recipesCreated
 
-An application whit a landing page, wich introduce in a home component where you can navigate through several recipes through a paginate, also you can search by ingredient or diet type, do sorting by diet, health score, and alphabetically.
-On the other hand, clicking the title name of the recipes it will show the recipes details.
+Instantly Access a Full Library of Recipes, Ready to Ignite Your Culinary Inspiration! 🍲🌟
 
+Key Features:
+
+🔍 Personalized Search: Discover the perfect recipe with our intuitive search bar. Filter by diet, food type (yes, even that delicious salmon!), or simply organize them alphabetically.
+
+📋 Order and Sorting: Tailor your discoveries to your liking. Whether alphabetically or by health score, you'll find the ideal recipe for every occasion.
+
+🔗 In-Depth Details: Dive deep into each recipe with our detailed button. Uncover preparation secrets, special ingredients, and unique tips that will make your culinary experience exceptional.
+
+📝 Create Your Own Recipe: Join the community of chefs and share your culinary creations. Our controlled form makes it easy to contribute and be recognized for your unique culinary skills.
+
+👩‍🍳 Gallery of Created Recipes: Access a special space for your own creations and discover delicious recipes shared by other users. A culinary community in constant growth!
+
+📱 Responsive Design: Enjoy [App Name] on any device. Our application is designed to adapt to your needs, whether on your computer, tablet, or phone.
 In other section you can see the recipes exclusively created by users.
 
 And finally through a form you be able to create your own recipe, being able to add an image among others.

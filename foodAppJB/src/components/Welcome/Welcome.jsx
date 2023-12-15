@@ -14,7 +14,7 @@ export default function Welcome() {
         <p>Get a recipe wich more suit to you!</p>
       </div>
       <Link className={Style.text} to="/home">
-        Begin your own experience
+       Recipes
       </Link>
     </div>
   );
