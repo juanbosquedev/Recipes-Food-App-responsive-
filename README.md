@@ -43,27 +43,3 @@ In other section you can see the recipes exclusively created by users.
 
 And finally through a form you be able to create your own recipe, being able to add an image among others.
 
-
-
-# Images
-<div class="display:>
-  
-
-# Landing
-<img src="./images/recipes-landing.png"/>
-
-#Animated Loader
-<img src="./images/loader animation.png"/>
-
-# Home
-<img src="./images/recipes-home.png"/>
-
-# Details
-<img src="./images/recipes-details.png"/>
-
-# Recipes Created
-<img src="./images/recipes-created.png"/>
-
-# Form to create a recipe
-<img src="./images/recipes-formCreate.png"/>
-</div>
