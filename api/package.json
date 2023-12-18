@@ -22,12 +22,10 @@
     "morgan": "^1.10.0",
     "node": "^19.6.0",
     "pg": "^8.5.1",
-    "react-dom": "^0.14.9",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^8.2.1",
-    "nodemon": "^2.0.22"
+    "mocha": "^8.2.1"
   }
 }
