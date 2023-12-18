@@ -4,20 +4,12 @@ const { Op, Association } = require("sequelize");
 const { Sequelize } = require("sequelize");
 const { API_KEY } = process.env;
 const {
-  getAllApiInformation,
   allDiets,
 } = require("../downloadData/downloading");
 const { Recipe, DietsTypes } = require("../db");
 
 
 const controllers = require("../controllers");
-// const middlewares = require("../middlewares");
-
-// router.delete("/:id", controllers.deleteCharacter)
-// router.post("/", controllers.createCharacter);
-// router.put("/:id", middlewares.characterValidation, controllers.updateCharacter)
-// router.get("/:id", controllers.getCharacterById);
-// router.get("/", controllers.getCharacters);
 
 const router = Router();
 router.get("/recipes/:id", controllers.getById);

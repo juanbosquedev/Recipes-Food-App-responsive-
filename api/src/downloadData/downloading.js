@@ -1,7 +1,5 @@
 const axios = require("axios");
 
-
-
 const { DataTypes } = require("sequelize");
 require("dotenv").config();
 const { API_KEY } = process.env;
