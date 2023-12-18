@@ -2,12 +2,13 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
-const routes = require("./src/routes/index");
+const routes = require("./routes/index.js");
 const cors = require("cors");
 
-const { conn } = require("./src/db.js");
+require("./db.js");
 
 const server = express();
+
 server.name = "API";
 
 server.use(cors());
@@ -26,27 +27,24 @@ server.use((req, res, next) => {
   next();
 });
 
-server.use(async (req, res, next) => {
-  try {
-    const dbConnection = await conn();
-    req.dbConnection = dbConnection;
-    next();
-  } catch (error) {
-    res.status(500).json({ error: "Internal server error" });
-  }
-});
-
 server.use("/", routes);
 
+// Error catching endware.
+server.use((err, req, res, next) => {
+  // eslint-disable-line no-unused-vars
+  const status = err.status || 500;
+  const message = err.message || err;
 
-const { PORT } = process.env;
-
-conn()
-  .then((dbConnection) => {
-    server.listen(PORT, () => {
-      console.log(`Server is listening `);
-    });
-  })
-  .catch((error) => {
-    console.error("Error connecting to the database:", error);
+  res.status(status).send(message);
+});
+server.use("*", (req, res) => {
+  res.status(404).send("Not Found");
+});
+server.use((err, req, res, next) => {
+  res.status(err.statusCode || 500).send({
+    error: true,
+    message: err.message,
   });
+});
+
+module.exports = server;

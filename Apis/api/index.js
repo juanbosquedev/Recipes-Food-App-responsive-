@@ -18,35 +18,30 @@ server.use(morgan("dev"));
 server.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Credentials", "true");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
   next();
 });
 
+
 server.use(async (req, res, next) => {
   try {
     const dbConnection = await conn();
-    req.dbConnection = dbConnection;
+    req.dbConnection = dbConnection; 
     next();
   } catch (error) {
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 
 server.use("/", routes);
 
-
 const { PORT } = process.env;
 
-conn()
-  .then((dbConnection) => {
-    server.listen(PORT, () => {
-      console.log(`Server is listening `);
-    });
-  })
-  .catch((error) => {
-    console.error("Error connecting to the database:", error);
+conn().then((dbConnection) => {
+  server.listen(PORT, () => {
+    console.log(`Server is listening`);
   });
+}).catch((error) => {
+  console.error('Error connecting to the database:', error);
+});
