@@ -36,7 +36,6 @@ export function get_all() {
   };
 }
 
-
 export function get_recipe(name) {
   return async function (dispatch) {
     try {
