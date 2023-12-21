@@ -23,7 +23,7 @@ const sequelize = new Sequelize('postgres://zgzngkwa:cqQXmFFZIk6FPx4l5B_mLlIbbHN
 const getDatabaseConnection = async () => {
   try {
     await sequelize.authenticate();
-    await sequelize.sync({ force: false });
+    await sequelize.sync({ force: false});
     console.log(
       "Connection to the database has been established successfully."
     );
