@@ -45,6 +45,9 @@
   text-decoration: none;
   bottom: 0rem;
 }
+.section p{
+  color:white;
+}
 .buttonDetail {
   color: aqua;
 }
