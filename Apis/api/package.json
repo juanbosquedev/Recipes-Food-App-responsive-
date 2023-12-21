@@ -9,7 +9,7 @@
   "author": "Juan",
   "license": "ISC",
   "engines": {
-    "node": ">=12.18.3",
+    "node": ">=19.6.0",
     "npm": ">=6.14.6"
   },
   "dependencies": {
