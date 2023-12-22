@@ -3,20 +3,20 @@ const fs = require("fs");
 const path = require("path");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
 
-// const sequelize = new Sequelize(
-//   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
+const sequelize = new Sequelize(
+  'postgres://zgzngkwa:cqQXmFFZIk6FPx4l5B_mLlIbbHNpZOj9@flora.db.elephantsql.com/zgzngkwa',
   
-//   {
-//     logging: false,
-//     native: false,
-//   }
-// );
-const sequelize = new Sequelize('postgres://zgzngkwa:cqQXmFFZIk6FPx4l5B_mLlIbbHNpZOj9@flora.db.elephantsql.com/zgzngkwa', {
-  dialect: 'postgres',
-  host: 'flora.db.elephantsql.com',
+  {
+    logging: false,
+    native: false,
+  }
+);
+// const sequelize = new Sequelize('postgres://zgzngkwa:cqQXmFFZIk6FPx4l5B_mLlIbbHNpZOj9@flora.db.elephantsql.com/zgzngkwa', {
+//   dialect: 'postgres',
+//   host: 'flora.db.elephantsql.com',
  
-  logging: true,
-});
+//   logging: true,
+// });
 
 const getDatabaseConnection = async () => {
   try {
