@@ -5,7 +5,6 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
 
 const sequelize = new Sequelize(
   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
-  
   {
     logging: false,
     native: false,
@@ -19,7 +18,6 @@ const sequelize = new Sequelize(
 const getDatabaseConnection = async () => {
   try {
     await sequelize.authenticate();
-    await sequelize.sync({ force: true });
     console.log(
       "Connection to the database has been established successfully."
     );
