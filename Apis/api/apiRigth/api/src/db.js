@@ -7,7 +7,7 @@ const sequelize = new Sequelize(
   'postgres://zgzngkwa:cqQXmFFZIk6FPx4l5B_mLlIbbHNpZOj9@flora.db.elephantsql.com/zgzngkwa',
   
   {
-    logging: false,
+    logging: true,
     native: false,
   }
 );
