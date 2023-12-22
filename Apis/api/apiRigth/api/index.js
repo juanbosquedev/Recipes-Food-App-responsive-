@@ -23,11 +23,11 @@ server.use((req, res, next) => {
   next();
 });
 
-// Añadimos un middleware para manejar la conexión a la base de datos antes de las rutas
+
 server.use(async (req, res, next) => {
   try {
     const dbConnection = await conn();
-    req.dbConnection = dbConnection; // Añadimos la conexión a la solicitud para que esté disponible en las rutas
+    req.dbConnection = dbConnection; 
     next();
   } catch (error) {
     res.status(500).json({ error: 'Internal server error' });
@@ -35,8 +35,6 @@ server.use(async (req, res, next) => {
 });
 
 server.use("/", routes);
-
-// Resto del código...
 
 const { PORT } = process.env;
 

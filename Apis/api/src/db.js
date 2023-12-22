@@ -1,21 +1,15 @@
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
-const { POSTGRESQL_URL} = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
 
 const sequelize = new Sequelize(
-  `${POSTGRESQL_URL}`, {
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
+  {
     logging: false,
     native: false,
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false, // Use only in development environment
-      },
-    },
   }
 );
-
 // const sequelize = new Sequelize(`${DB_NAME}`, `${DB_USER}`, `${DB_PASSWORD}`, {
 //   host: `${DB_HOST}`,
 //   dialect: `${DB_USER}`,
