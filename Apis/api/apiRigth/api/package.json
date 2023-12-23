@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "npx nodemon"
   },
   "author": "Henry",
   "license": "ISC",
@@ -21,6 +21,7 @@
     "express": "^4.17.1",
     "morgan": "^1.10.0",
     "node": "^19.6.0",
+    "nodemon": "^3.0.2",
     "pg": "^8.5.1",
     "sequelize": "^6.3.5"
   },
