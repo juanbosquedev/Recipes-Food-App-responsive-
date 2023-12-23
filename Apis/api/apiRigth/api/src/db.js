@@ -1,28 +1,18 @@
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
+const { POSTGRESQL_URL, DB_USER,DB_HOST } = process.env;
 
-// const sequelize = new Sequelize(
-//   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
-//   {
-//     logging: false,
-//     native: false,
-//   }
-// );
-const sequelize = new Sequelize('postgres://zgzngkwa:cqQXmFFZIk6FPx4l5B_mLlIbbHNpZOj9@flora.db.elephantsql.com/zgzngkwa', {
-  dialect: 'postgres',
-  host: 'flora.db.elephantsql.com',
+
+const sequelize = new Sequelize(`${POSTGRESQL_URL}`, {
+  dialect: `${DB_USER}`,
+  host: `${DB_HOST}`,
   dialectOptions: {
     ssl: true,
   },
   logging: true,
 });
-// const sequelize = new Sequelize(`${DB_NAME}`, `${DB_USER}`, `${DB_PASSWORD}`, {
-//   host: `${DB_HOST}`,
-//   dialect: `${DB_USER}`,
-//   logging: true,
-// });
+
 const getDatabaseConnection = async () => {
   try {
     await sequelize.authenticate();
