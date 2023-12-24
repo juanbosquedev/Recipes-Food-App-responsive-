@@ -11,12 +11,7 @@ const sequelize = new Sequelize(`${POSTGRESQL_URL}`, {
     ssl: true,
   },
   logging: true,
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000,
-  },
+
 });
 
 const getDatabaseConnection = async () => {

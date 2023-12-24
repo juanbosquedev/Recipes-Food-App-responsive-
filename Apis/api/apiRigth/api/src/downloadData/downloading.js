@@ -11,7 +11,9 @@ const getAllApiInformation = async () => {
 
   if (verDb.length > 0) {
     return verDb;
-  }
+  }else {
+
+  
 
   const { data } = await axios.get(
     `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`
@@ -27,7 +29,7 @@ const getAllApiInformation = async () => {
     return error;
   }
 };
-
+}
 
 const allDiets = async () => {
  
