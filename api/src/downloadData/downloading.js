@@ -8,12 +8,11 @@ const { getInfo } = require("../downloadData/reutilizable");
 
 const getAllApiInformation = async () => {
   const verDb = await Recipe.findAll();
-
+console.log(verDb.length, " dbcharge")
   if (verDb.length > 0) {
+  
     return verDb;
   }else {
-
-  
 
   const { data } = await axios.get(
     `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`
@@ -36,24 +35,25 @@ const allDiets = async () => {
   const verDbDiets = await DietsTypes.findAll();
   if (verDbDiets.length > 0) {
     return verDbDiets;
-  }
-  try {
-    const allrecipes = await Recipe.findAll();
+  }else {
+    try {
+      console.log("entre")
+      const allrecipes = await Recipe.findAll();
 
-    const allDiets = [];
-   allrecipes.length && allrecipes.map((el)=>{
-     allDiets.push( el.diets)
-    })
-  const s = allDiets.flat(2)
-  s.map((dieta) => {
-      DietsTypes.findOrCreate({
-        where: { name: dieta },
+      const allDiets = [];
+      allrecipes.length &&
+        allrecipes.map((el) => {
+          allDiets.push(el.diets);
+        });
+      const s = allDiets.flat(2);
+      s.map((dieta) => {
+        DietsTypes.findOrCreate({
+          where: { name: dieta },
+        });
       });
-    });
-   
-    
-  } catch (error) {
-    return error;
+    } catch (error) {
+      return error;
+    }
   }
 };
 
