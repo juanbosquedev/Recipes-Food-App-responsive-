@@ -37,10 +37,13 @@ export default function Home() {
     }
   }, [input]);
   useEffect(() => {
-    if (recipes.length === 0) {
+    if (recipes.length> 0) {
+      dispatch(get_Diets());
+    } 
+    return ()=>{
       dispatch(get_Diets());
     }
-  }, [dispatch, recipes.length]);
+  }, [recipes]);
   useEffect(() => {
     if (details.length !== 0) {
       dispatch(cleanUpDetails());
