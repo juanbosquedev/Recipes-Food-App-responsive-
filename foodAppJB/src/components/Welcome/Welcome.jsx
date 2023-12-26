@@ -1,12 +1,8 @@
-// import React from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Style from "./Welcome.module.css";
 
-
-
 export default function Welcome() {
-
-     
   return (
     <div className={Style.Welcome}>
       <label className={Style.lbl}>Recipes Food</label>
@@ -14,7 +10,7 @@ export default function Welcome() {
         <p>Get a recipe wich more suit to you!</p>
       </div>
       <Link className={Style.text} to="/home">
-       Recipes
+        Recipes
       </Link>
     </div>
   );

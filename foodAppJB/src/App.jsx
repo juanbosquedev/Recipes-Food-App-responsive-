@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Nav from "./components/Nav/Nav.jsx";

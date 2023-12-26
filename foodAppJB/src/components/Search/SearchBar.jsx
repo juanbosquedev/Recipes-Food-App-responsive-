@@ -1,9 +1,9 @@
-
+import React from "react";
 import { useDispatch } from "react-redux";
 import { get_recipe } from "../../Reduxx/Actions/actionsCreator";
 import { useRef, useState } from "react";
 import Style from "./Search.module.css";
-import propTypes from "prop-types"; 
+import propTypes from "prop-types";
 
 export default function SearchBar({ setInput }) {
   const dispatch = useDispatch();
@@ -39,7 +39,6 @@ export default function SearchBar({ setInput }) {
   );
 }
 
-
 SearchBar.propTypes = {
-  setInput : propTypes.func.isRequired,
-}
+  setInput: propTypes.func.isRequired,
+};

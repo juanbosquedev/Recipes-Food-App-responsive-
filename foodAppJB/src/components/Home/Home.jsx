@@ -1,6 +1,7 @@
+import React from "react";
+
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import Card from "../Card/Card";
 import { useEffect } from "react";
 import Paginate from "../Paginate/Paginate";
@@ -28,19 +29,15 @@ export default function Home() {
   const dispatch = useDispatch();
   const [paginado, setPaginado] = useState();
 
- 
   useEffect(() => {
-
-    if(input.length !== 0){
-    dispatch(get_recipe(input));}
-    else{
+    if (input.length !== 0) {
+      dispatch(get_recipe(input));
+    } else {
       dispatch(get_all());
-    
     }
-  }, [ input]);
+  }, [input]);
   useEffect(() => {
     if (recipes.length === 0) {
-     
       dispatch(get_Diets());
     }
   }, [dispatch, recipes.length]);
@@ -48,7 +45,7 @@ export default function Home() {
     if (details.length !== 0) {
       dispatch(cleanUpDetails());
     }
-  }, [ details]);
+  }, [details]);
 
   function HandlerDietsFilter(e) {
     dispatch(dietsFilter(e.target.value));
