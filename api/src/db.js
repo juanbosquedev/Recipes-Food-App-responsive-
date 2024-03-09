@@ -1,11 +1,12 @@
 const { Sequelize } = require("sequelize");
+const pg =require('pg')
 const fs = require("fs");
 const path = require("path");
 const { POSTGRESQL_URL, DB_USER,DB_HOST } = process.env;
 
 
 const sequelize = new Sequelize(`${POSTGRESQL_URL}`, {
-  dialect: `${DB_USER}`,
+  dialectModule: pg,
   host: `${DB_HOST}`,
   dialectOptions: {
     ssl: true,
