@@ -1,12 +1,16 @@
 const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
-  sequelize.define("recipe", {
+  const Recipe = sequelize.define("Recipe", {
     id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      allowNull: false,
+      type: DataTypes.INTEGER,
       primaryKey: true,
+      autoIncrement: true,
+      unique: true,
+      allowNull: false,
+      // type: DataTypes.UUID,
+      // defaultValue: DataTypes.UUIDV4,
+      // primaryKey: true,
     },
     idOriginal:{
       type: DataTypes.INTEGER,
@@ -27,19 +31,16 @@ module.exports = (sequelize) => {
         max: 100
       }
     }, 
-    dishTypes:{
-      type: DataTypes.ARRAY(DataTypes.STRING),
-    },
-    steps: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
-    },
+    // dishTypes:{
+    //   type: DataTypes.ARRAY(DataTypes.STRING),
+    // },
+    // steps: {
+    //   type: DataTypes.ARRAY(DataTypes.STRING),
+    // },
     image:{
       type: DataTypes.STRING,
     },
-    diets:{
-      type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull:false,
-    },
+
     servings:{
       type: DataTypes.INTEGER,
       allowNull:false,
@@ -49,4 +50,8 @@ module.exports = (sequelize) => {
       allowNull:false,
     }
   },{timestamps: false});
+
+
+  return Recipe;
 };
+
