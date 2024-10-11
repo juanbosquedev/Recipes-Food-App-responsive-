@@ -4,14 +4,15 @@ require("dotenv").config();
 const server = require("./src/app");
 const { PORT } = process.env;
 
-require("./src/models/association/associations");
+require("./src/models/association/index");
+
 
 const { fetchAndStoreApiData } = require('./src/utils/fill-database/populateDatabase');
 
 async function initializeServer() {
   try {
-    
-    await sequelize.sync({ force: false });
+
+    await sequelize.sync({ force: true });
     await fetchAndStoreApiData();
 
     console.log("Connection to the database established successfully.");
