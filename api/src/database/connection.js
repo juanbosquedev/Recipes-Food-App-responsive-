@@ -2,6 +2,8 @@ const { Sequelize } = require("sequelize");
 const pg =require('pg')
 const fs = require("fs");
 const path = require("path");
+require("dotenv").config();
+
 const { POSTGRESQL_URL, DB_USER,DB_HOST } = process.env;
 
 
