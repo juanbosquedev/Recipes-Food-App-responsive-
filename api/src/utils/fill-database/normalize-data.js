@@ -1,10 +1,9 @@
 const { sequelize } = require("../../database/connection.js");
-const { Recipe, DietsTypes } = sequelize.models;
+const { Recipe, DietsTypes, CookingStep } = sequelize.models;
 
 const storeRecipes = async (recipesFromApi) => {
   try {
     for (const recipeData of recipesFromApi) {
-    
       const [recipe, created] = await Recipe.findOrCreate({
         where: { idOriginal: recipeData.id },
         defaults: {
@@ -13,16 +12,23 @@ const storeRecipes = async (recipesFromApi) => {
           summary: recipeData.summary,
           healthScore: recipeData.healthScore,
           dishTypes: recipeData.dishTypes.map((el) => el),
-          steps:
-            recipeData.analyzedInstructions &&
-            recipeData.analyzedInstructions.length > 0
-              ? recipeData.analyzedInstructions[0].steps.map((el) => el.step)
-              : [],
+
           image: recipeData.image,
           servings: recipeData.servings,
           cookingTime: recipeData.readyInMinutes,
         },
       });
+      if (created) {
+        for (const instruction of recipeData.analyzedInstructions) {
+          for (const stepData of instruction.steps) {
+            await CookingStep.create({
+              stepNumber: stepData.number,
+              stepDescription: stepData.step,
+              RecipeId: recipe.id,
+            });
+          }
+        }
+      }
 
       if (recipeData.diets && recipeData.diets.length > 0) {
         const dietPromises = recipeData.diets.map(async (dietName) => {
