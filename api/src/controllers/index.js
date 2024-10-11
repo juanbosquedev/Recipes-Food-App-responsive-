@@ -1,6 +1,9 @@
+
+
 module.exports = {
     getById: require("./getById"),
-    firstCall:require("./firstCall"),
+    recipesAll:require("./recipesAll"),
     getByName:require("./getByName"),
-    dietsAll:require("./dietsAll")
+    getAllDiets:require("./getAllDiets"),
+    createRecipe:require("./createRecipe")
 };
