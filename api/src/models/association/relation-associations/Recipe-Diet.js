@@ -1,4 +1,4 @@
-const { sequelize } = require("../../database/connection");
+const { sequelize } = require("../../../database/connection");
 
 const { Recipe, DietsTypes, RecipeDiet } = sequelize.models;
 
