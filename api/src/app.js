@@ -5,8 +5,6 @@ const morgan = require("morgan");
 const routes = require("./routes/index.js");
 const cors = require("cors");
 
-require("./db.js");
-
 const server = express();
 
 server.name = "API";
@@ -28,7 +26,6 @@ server.use((req, res, next) => {
 });
 
 server.use("/", routes);
-
 
 server.use((err, req, res, next) => {
   const status = err.status || 500;
