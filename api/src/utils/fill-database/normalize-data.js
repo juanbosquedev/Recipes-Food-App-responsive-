@@ -11,8 +11,6 @@ const storeRecipes = async (recipesFromApi) => {
           name: recipeData.title,
           summary: recipeData.summary,
           healthScore: recipeData.healthScore,
-          dishTypes: recipeData.dishTypes.map((el) => el),
-
           image: recipeData.image,
           servings: recipeData.servings,
           cookingTime: recipeData.readyInMinutes,
