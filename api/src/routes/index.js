@@ -12,7 +12,7 @@ const router = Router();
 router.get("/", recipesAll);
 router.get("/diets", getAllDiets);
 router.get("/:id", getById);
-router.get("/recips/:name", getByName);
+router.get("/:name", getByName);
 router.post("/", createRecipe);
 
 module.exports = router;

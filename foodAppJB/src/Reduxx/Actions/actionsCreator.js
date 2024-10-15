@@ -23,7 +23,7 @@ export function get_all() {
   return async function (dispatch) {
     try {
       const { data } = await axios.get(
-        `${VITE_API_URL}/recipesAll`
+        `${VITE_API_URL}`
       );
 
       return dispatch({ type: GET_ALL, payload: data });
@@ -40,7 +40,7 @@ export function get_recipe(name) {
   return async function (dispatch) {
     try {
       const { data } = await axios.get(
-        `${VITE_API_URL}/recips/${name}`
+        `${VITE_API_URL}/${name}`
       );
       
       return dispatch({ type: GET_RECIPES, payload: data });
@@ -56,7 +56,7 @@ export function get_recipe(name) {
 export function get_Detail(id) {
   return async function (dispatch) {
     try {
-      const { data } = await axios.get(`${VITE_API_URL}/recipes/${id}`);
+      const { data } = await axios.get(`${VITE_API_URL}/${id}`);
       return dispatch({ type: GET_DETAILS, payload: data });
     } catch (error) {
       return dispatch({
@@ -75,7 +75,7 @@ export function cleanUpDetails() {
 export function create_Recipe(object) {
   return async function (dispatch) {
     try {
-      const { data } = await axios.post(`${VITE_API_URL}/recipes`, object);
+      const { data } = await axios.post(`${VITE_API_URL}`, object);
       return dispatch({ type: CREATE_RECIPE, payload: data });
     } catch (error) {
       return dispatch({
