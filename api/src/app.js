@@ -11,10 +11,10 @@ server.name = "API";
 
 server.use(
   cors({
-    origin: "https://recipesjb.vercel.app", // Restrict access to your frontend origin
-    credentials: true, // Enable credentials (if needed)
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed methods
-    allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept"], // Allowed headers
+    origin: "https://recipesjb.vercel.app", 
+    credentials: true, 
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], 
+    allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept"], 
   })
 );
 
@@ -22,8 +22,6 @@ server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 server.use(bodyParser.json({ limit: "50mb" }));
 server.use(cookieParser());
 server.use(morgan("dev"));
-  next();
-});
 
 server.use("/", routes);
 
