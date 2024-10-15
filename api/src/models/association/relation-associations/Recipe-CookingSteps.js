@@ -2,8 +2,6 @@ const { sequelize } = require("../../../database/connection");
 
 const { Recipe, CookingStep } = sequelize.models;
 
+Recipe.hasMany(CookingStep);
 
-
- Recipe.hasMany(CookingStep);
-
-CookingStep.belongsTo( Recipe);
+CookingStep.belongsTo(Recipe);
