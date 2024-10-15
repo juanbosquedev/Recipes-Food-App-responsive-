@@ -9,19 +9,19 @@ const server = express();
 
 server.name = "API";
 
-server.use(cors());
+server.use(
+  cors({
+    origin: "https://recipesjb.vercel.app", // Restrict access to your frontend origin
+    credentials: true, // Enable credentials (if needed)
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed methods
+    allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept"], // Allowed headers
+  })
+);
+
 server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 server.use(bodyParser.json({ limit: "50mb" }));
 server.use(cookieParser());
 server.use(morgan("dev"));
-server.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
   next();
 });
 
