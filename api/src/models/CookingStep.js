@@ -4,7 +4,6 @@ module.exports = (sequelize) => {
   const CookingStep = sequelize.define(
     "CookingStep",
     {
-      
       stepNumber: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -14,7 +13,7 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
     },
-    {timestamps: false}
+    { timestamps: false }
   );
 
   return CookingStep;

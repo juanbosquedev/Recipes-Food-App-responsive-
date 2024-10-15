@@ -10,12 +10,6 @@ module.exports = (sequelize) => {
         autoIncrement: true,
         unique: true,
         allowNull: false,
-        // type: DataTypes.UUID,
-        // defaultValue: DataTypes.UUIDV4,
-        // primaryKey: true,
-      },
-      idOriginal: {
-        type: DataTypes.INTEGER,
       },
       name: {
         type: DataTypes.STRING,
