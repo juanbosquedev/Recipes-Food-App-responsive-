@@ -34,7 +34,7 @@ server.use((err, req, res, next) => {
   res.status(status).send(message);
 });
 server.use("*", (req, res) => {
-  res.status(404).send("Not Found");
+  res.status(404).send("Path Not Found");
 });
 server.use((err, req, res, next) => {
   res.status(err.statusCode || 500).send({
