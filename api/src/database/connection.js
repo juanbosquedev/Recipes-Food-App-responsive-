@@ -1,11 +1,11 @@
 const { Sequelize } = require("sequelize");
-const pg =require('pg')
+const pg = require("pg");
 const fs = require("fs");
 const path = require("path");
+
 require("dotenv").config();
 
-const { POSTGRESQL_URL, DB_USER,DB_HOST } = process.env;
-
+const { POSTGRESQL_URL, DB_HOST } = process.env;
 
 const sequelize = new Sequelize(`${POSTGRESQL_URL}`, {
   dialectModule: pg,
@@ -14,7 +14,6 @@ const sequelize = new Sequelize(`${POSTGRESQL_URL}`, {
     ssl: true,
   },
   logging: false,
-
 });
 
 const basename = path.basename(__filename);
@@ -37,11 +36,11 @@ let capsEntries = entries.map((entry) => [
   entry[1],
 ]);
 sequelize.models = Object.fromEntries(capsEntries);
-const {Recipe, DietsTypes, CookingStep} = sequelize.models;
+const { Recipe, DietsTypes, CookingStep } = sequelize.models;
 
 module.exports = {
   sequelize,
   Recipe,
   DietsTypes,
-  CookingStep
+  CookingStep,
 };
