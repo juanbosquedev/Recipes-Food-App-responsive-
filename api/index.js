@@ -12,7 +12,7 @@ const { fetchAndStoreApiData } = require('./src/utils/fill-database/populateData
 async function initializeServer() {
   try {
 
-    await sequelize.sync({ force: false });
+    await sequelize.sync({ force: true });
     await fetchAndStoreApiData();
 
     console.log("Connection to the database established successfully.");
