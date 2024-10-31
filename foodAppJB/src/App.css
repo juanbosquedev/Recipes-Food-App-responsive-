@@ -7,8 +7,6 @@
 
 body {
   background: url("../../../images/bg-food.png") no-repeat center;
-  /* background-attachment: fixed, scroll; */
-  /* background-repeat: no-repeat, repeat-y; */
   background-size: cover;
 }
 body {
