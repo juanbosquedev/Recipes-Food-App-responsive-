@@ -1,7 +1,7 @@
 .Welcome {
   display: grid;
   justify-content: space-evenly;
-  background: url("../images/bg-welcome.png") no-repeat center;
+  background: url("../../assets/bg-welcome.png") no-repeat center;
   background-size: cover;
   width: 100vw;
   height: 100vh;

@@ -6,7 +6,7 @@
 }
 
 body {
-  background: url("../../../images/bg-food.png") no-repeat center;
+  background: url("./assets/bg-food.png") no-repeat center;
   background-size: cover;
 }
 body {
