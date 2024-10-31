@@ -3,8 +3,9 @@
   align-items: center;
   justify-content: space-around;
   width: 100vw;
-  height: 80px;
+  height: 12vh;
   border-bottom: 2px solid #790c0c;
+  box-sizing: border-box;
 }
 
 .components a {
