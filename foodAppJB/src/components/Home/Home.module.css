@@ -1,6 +1,10 @@
 .home {
   display: grid;
   justify-content: center;
+height: 88vh;
+/* padding-top: 12vh; */
+/* overflow: hidden; */
+/* box-sizing: border-box; */
 }
 .loade {
   position: relative;
@@ -19,27 +23,11 @@
   -webkit-animation: spin 4s linear infinite;
   animation: spin 1s linear infinite;
 }
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 .cards {
   display: grid;
-  margin: 3rem 2.5rem;
+  /* margin: 3rem 2.5rem; */
   grid-template-columns: repeat(3, minmax(1rem, 1fr));
   grid-template-rows: repeat(3, minmax(1rem, 1fr));
   gap: 1.5rem;
@@ -50,7 +38,7 @@
   flex-wrap: wrap;
   grid-template-columns: repeat(3, minmax(1rem, 1fr));
   width: 100vw;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
 }
 select {
   height: 23px;
@@ -125,5 +113,22 @@ select > option {
 
   .main > span {
     display: none;
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
