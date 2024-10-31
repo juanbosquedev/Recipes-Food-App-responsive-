@@ -6,11 +6,19 @@
 }
 
 body {
-  background-image: url("./components/images/bg-food.png");
-  background-attachment: fixed, scroll;
-  background-repeat: no-repeat, repeat-y;
+  background: url("../../../images/bg-food.png") no-repeat center;
+  /* background-attachment: fixed, scroll; */
+  /* background-repeat: no-repeat, repeat-y; */
   background-size: cover;
 }
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -38,9 +46,9 @@ body {
   }
 }
 
-.card {
+/* .card {
   padding: 2em;
-}
+} */
 
 .read-the-docs {
   color: #888;
