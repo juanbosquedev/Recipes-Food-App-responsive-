@@ -11,9 +11,9 @@
   justify-content: space-around;
   width: 70%;
 
-  height: 80vh;
-
-  margin: 1rem;
+  height: 88vh;
+box-sizing: border-box;
+  /* margin: 1rem; */
   box-shadow: 2px 0px #790c0c;
   /* border: #790c0c solid 1px ; */
   background-color: transparent;
